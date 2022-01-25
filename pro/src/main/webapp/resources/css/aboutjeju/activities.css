@@ -1,0 +1,132 @@
+@charset "UTF-8";
+*{
+margin: 0px auto;
+padding: 0px auto;
+box-sizing: border-box;
+font-size: 17px;
+}
+#title{
+width: 1920px;
+height: 108px;
+text-align: center;
+margin-top: 20px;
+}
+#title > a{
+    font-size: 50px;
+}
+#menuF{
+position: absolute;
+left: 960px;
+top: 490px;
+transform: translateX(-55%) translateY(-50%);
+width: 1536px;
+height: 750px;
+}
+#category{
+width: 153.6px;
+height:750px;
+float: left;
+}
+#content{
+border: 2px black solid;
+width: 1305.6px;
+height: 750px;
+float: left;
+border-left: 0px;
+}
+#detail{
+border: 2px black solid;
+width: 153.6px;
+height: 30px;
+text-align: center;
+border-top: 0px;
+}
+
+#subtitle{
+position: relative;
+background-color: white;
+font-size: 17px;
+display:inline-block;
+height: 25px;
+top: -12.5px;
+margin-left: 10px;
+}
+#but{
+	
+    float: right;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+#but > input{
+    width: 100px;
+    height: 30px;
+}
+
+/*안의 내용*/
+#hiking,#leisure{
+	width: 300px;
+	height: 638px;
+	float: left;
+	border: 0px red solid;
+}
+#activity{
+	width: 571px;
+	height: 638px;
+	float: left;
+	border: 0px red solid;
+}
+#hiking div,#leisure div{
+	width: 300px;
+	height: 212px;
+	border: 0px red solid;
+	padding-left: 35px;
+	padding-right: 35px;
+	padding-top: 10px;
+	font-size: 17px;
+}
+#activity >#act1,#activity >#act3{
+	width: 571px;
+	height: 279px;
+	border: 0px red solid;
+}
+
+#act1 div{
+	width: 284px;
+	height: 279px;
+	border: 0px red solid;
+	float:left;
+	padding-top: 200px;
+	padding-left: 82px;
+}
+
+#act1 input{
+	text-align: center;
+	width: 120px;
+	font-size: 30px;
+}
+
+#activity >#act2{
+	width: 200px;
+	height: 80px;
+	border: 0px red solid;
+}
+
+#act2 >label{
+	font-size: 50px;
+	text-align: center;
+}
+
+#act3 div{
+	width: 284px;
+	height: 279px;
+	border: 0px red solid;
+	float:left;
+	padding-top: 60px;
+	padding-left: 42px;
+}
+#act1 > #color1,#act3 >#color2{
+	border-right: 2px black solid;
+}
+textarea{
+	width: 148px;
+}

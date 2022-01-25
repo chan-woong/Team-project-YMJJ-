@@ -1,0 +1,251 @@
+@charset "UTF-8";
+
+* {
+	margin: 0px auto;
+	padding: 0px auto;
+	box-sizing: border-box;
+}
+
+#title {
+	width: 1920px;
+	height: 108px;
+	text-align: center;
+	margin-top: 20px;
+}
+
+#title>a {
+	font-size: 50px;
+}
+
+#menuF {
+	position: absolute;
+	left: 960px;
+	top: 490px;
+	transform: translateX(-55%) translateY(-50%);
+	width: 1536px;
+	height: 750px;
+}
+
+#category {
+	width: 153.6px;
+	height: 750px;
+	float: left;
+}
+
+#content {
+	border: 2px black solid;
+	width: 1305.6px;
+	height: 750px;
+	float: left;
+	border-left: 0px;
+}
+
+#detail {
+	border: 2px black solid;
+	width: 153.6px;
+	height: 30px;
+	text-align: center;
+	border-top: 0px;
+	font-size: 17px;
+}
+
+#mid1 {
+	height: 50px;
+}
+
+#viewcount {
+	float: left;
+	margin-left: 20px;
+	line-height: 50px;
+}
+
+#mid1_button {
+	float: right;
+	line-height: 50px;
+	margin-right: 10px;
+	margin-left: 5px;
+}
+
+#mid2 {
+	text-align: center;
+	height: 60px;
+}
+
+#mid3 {
+	height: 30px;
+}
+
+#mid3>div {
+	float: right;
+	margin-right: 10px;
+	height: 30px;
+	vertical-align: middle;
+}
+
+#mid4 {
+	height: 330px;
+	display: table;
+	width: 500px;
+	text-align: center;
+	border: 1px solid black;
+}
+
+#mid4>#mid_image {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+#mid4>#mid_image>img {
+	max-width: 500px;
+	max-height: 320px;
+}
+
+#mid5 {
+	height: 30px;
+	text-align: center;
+}
+
+#mid6 {
+	height: 250px;
+	text-align: center;
+}
+
+#notice {
+	border: 1px black solid;
+	margin-left: 30px;
+	font-size: 30px;
+	margin-top: 0px;
+	cursor: pointer;
+}
+
+#noticemid1 {
+	height: 59px;
+	width: 1245px;
+	float: left;
+	margin-left: 30px;
+	border: 1px black solid;
+	font-size: 30px;
+}
+
+#noticemid2 {
+	border: 1px black solid;
+	height: 450px;
+	width: 1245px;
+	float: left;
+	margin-left: -1px;
+	margin-top: -9px;
+	font-size: 30px;
+}
+
+#button {
+	border: 0px black solid;
+	width: 160px;
+	height: 30px;
+	float: center;
+	text-align: center;
+	margin-top: 15px;
+	width: 160px;
+}
+
+#button1 {
+	width: 25px;
+	height: 25px;
+	float: left;
+}
+
+
+#card{
+	float: left;
+	width: 50%;
+	height: 350px;
+	border-bottom: 1px gray solid;
+	box-sizing: border-box;
+}
+
+#card_content{
+	float: left;
+	width: 62%;
+	height: 250px;
+	padding: 50px;
+	box-sizing: border-box;
+	word-break:break-all;
+	overflow: hidden;
+}
+
+
+#card_title{
+	float: left;
+	width: 35%;
+	height: 100%;
+	display: table;
+	text-align: center;
+}
+
+#card_frame{
+	margin-right: 10px;
+	display: table-cell;
+	vertical-align: middle;
+	height: 210px;
+	position: relative;
+	border: 1px gray solid;
+	box-sizing: border-box;
+}
+
+#card_frame img{
+	max-width: 95%;
+	max-height: 100%;
+}
+
+#card_text{
+	position: absolute;
+	left: 0;
+	bottom: 0px;
+	height: 40px;
+	width: 100%;
+	line-height: 40px;
+	border: 1px gray solid;
+	box-sizing: border-box;
+}
+
+#reviewListBot{
+	display: table-cell;
+	width: 100%;
+	height: 50px;
+	text-align: right;
+	float: right;
+}
+
+#reviewListBot > a {
+	line-height: 50px;
+	margin-right: 20px;
+}
+
+#button2{
+	float: right;
+	margin-right: 10px; 
+}
+
+#EventCard {
+	border: 2px black solid;
+	width: 250px;
+	height: 250px;
+	float: left;
+	margin-top: 30px;
+	margin-left: 30px;
+}
+
+#EventButton {
+	border: 0px black solid;
+	width: 160px;
+	height: 30px;
+	float: center;
+	text-align: center;
+	margin-top: 15px;
+	width: 160px;
+}
+
+#EventButton > #button1 {
+	width: 25px;
+	height: 25px;
+	float: left;
+}
