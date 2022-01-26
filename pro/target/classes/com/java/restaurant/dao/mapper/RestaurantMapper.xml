@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+  <mapper namespace="com.java.restaurant.dao.mapper.RestaurantMapper">
+  
+  	<resultMap type="com.java.restaurant.dto.RestaurnatDto"  id="restaurnatDto">
+  		<result column="RTnumber"  property="RTnumber"/>
+  		<result column="RTname"  property="RTname"/>
+  		<result column="RTtype"  property="RTtype"/>
+  		<result column="RTaddress"  property="RTaddress"/>
+  		
+  		<result column="RTpostalcode"  property="RTpostalcode"/>
+  		<result column="RTcallnumber1"  property="RTcallnumber1"/>
+  		<result column="RTcallnumber2"  property="RTcallnumber2"/>
+  		<result column="RTcallnumber3"  property="RTcallnumber3"/>
+  		<result column="RTlatitude"  property="RTlatitude"/>
+  		<result column="RTlongitude"  property="RTlongitude"/>
+  		
+  		<result column="RTintroduce"  property="RTintroduce"/>
+  		<result column="RTcount"  property="RTcount"/>
+  		
+  		<result column="group_number"  property="group_Number"/>
+  		<result column="sequence_number"  property="sequence_Number"/>
+  		<result column="sequence_level"  property="sequence_Level"/>
+  	</resultMap>
+ 
+  	<select id="boardGroupNumberMax" resultType="int">
+  		SELECT NVL(MAX(group_number), 0) FROM Restaurant
+  	</select>
+  	
+  	<update id="boardWriterNumber" parameterType="java.util.HashMap">
+  		<![CDATA[
+	  		UPDATE Restaurant SET sequence_number=sequence_number+1
+			WHERE group_number=#{group_Number} 
+			AND sequence_number > #{sequence_Number}
+		]]>
+  	</update>
+  	
+  	<insert id="boardInsert" parameterType="com.java.restaurant.dto.RestaurnatDto">
+	  	INSERT INTO Restaurant(RTnumber, RTname, RTtype, RTaddress, RTpostalcode,
+	  					  RTcallnumber1, RTcallnumber2, RTcallnumber3, RTlatitude,
+	  					  RTlongitude, RTintroduce, RTcount, group_number, sequence_number, sequence_level)			   
+		VALUES(Restaurant_RTnumber_seq.nextval, #{RTname}, #{RTtype}, #{RTaddress}, #{RTpostalcode},
+		            #{RTcallnumber1}, #{RTcallnumber2}, #{RTcallnumber3}, #{RTlatitude},
+		            #{RTlongitude}, #{RTintroduce}, #{RTcount}, #{group_Number}, #{sequence_Number},
+		            #{sequence_Level})
+  	</insert>
+  	
+  
+  	<!--
+  	<select id="boardCount" resultType="int">
+  		SELECT COUNT(*) FROM board
+  	</select>
+  	
+  	 
+  	
+  	<select id="boardList" parameterType="java.util.HashMap" resultMap="boardDto">
+  		<![CDATA[
+	  		SELECT * FROM
+						(SELECT ROWNUM rnum, a.* FROM 
+								(SELECT * FROM board ORDER BY group_number DESC, sequence_number ASC) a) b 
+			WHERE b.rnum >=#{startRow} AND b.rnum <=#{endRow}
+		]]>
+  	</select>
+  	
+  	<update id="boardReadCount" parameterType="int">
+  		UPDATE board SET read_count=read_count+1 WHERE board_number=#{boardNumber}
+  	</update>
+  	
+  	<select id="boardRead" parameterType="int" resultMap="boardDto">
+  		SELECT * FROM board WHERE board_number=#{boardNumber}
+  	</select>
+  	
+  	<delete id="boardDelete" parameterType="java.util.HashMap">
+  		DELETE FROM board 
+  		WHERE board_number=#{boardNumber} AND password=#{password}
+  	</delete>
+  	
+  	<update id="boardUpdate" parameterType="com.java.board.dto.BoardDto">
+  		UPDATE board SET email=#{email}, subject=#{subject}, content=#{content}
+  		WHERE board_number=#{boardNumber}
+  	</update>
+  	-->
+  </mapper>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  

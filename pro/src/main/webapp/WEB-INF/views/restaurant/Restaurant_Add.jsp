@@ -19,24 +19,21 @@
 	<div id="content">
 		<div id="sub_content">
 
-            <div id="subject1">
-                <div id="subject2">  <!--  div1 -->
-                    <h4>Add Restaurant</h4>
-                </div>
-                <div id="tedori_btn">
-                    <div id="line_btn">
-                        <input type="submit" value="확인"/>
-                        <input type="reset" value="취소"/>
-                    </div>
-                </div>
-            </div>
-
-            
-    
-            <form name="memberForm"  id="form_style"
-                     action="${root}/member/registerOk.do" 
-                     method="post"
-                     onsubmit="return registerForm(this)">
+            <form name="restaurantForm"  id="form_style"
+            			action="${root}/restaurant/writeOk.do"  
+						method="post">
+						
+				<div id="subject1">
+                	<div id="subject2">  <!--  div1 -->
+                    	<h4>Add Restaurant</h4>
+                	</div>
+                	<div id="tedori_btn">
+                    	<div id="line_btn">
+                        	<input type="submit" value="확인"/>
+                        	<input type="reset" value="취소"/>
+                    	</div>
+                	</div>
+            	</div>
     
                 <div id="nav0">
                     
@@ -57,14 +54,14 @@
             
                             <label class="title">Number</label>
                             <span class="content">
-                                <select name="RTcallnumber">
+                                <select name="RTcallnumber1">
                                     <option>번호</option>
                                     <option value="010">010</option>
                                     <option value="016">016</option>
                                     <option value="064">064</option>
                                 </select>
-                                <input type="text" name="number1" size="7" maxlength="4"/>
-                                <input type="text" name="number2" size="7" maxlength="4"/>
+                                <input type="text" name="RTcallnumber2" size="7" maxlength="4"/>
+                                <input type="text" name="RTcallnumber3" size="7" maxlength="4"/>
                             </span>
                             
                         </div>
@@ -107,7 +104,7 @@
 
                     <label class="title">Introduction</label>
                     <div id="img">
-                        <textarea rows="10" cols="60" name="massage"></textarea>
+                        <textarea rows="10" cols="60" name="RTintroduce"></textarea>
             
                     </div>
                     

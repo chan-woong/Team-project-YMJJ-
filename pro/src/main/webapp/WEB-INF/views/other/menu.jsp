@@ -16,35 +16,35 @@
 #header{
     border: 1px black solid;
     width: 1920px;
-    height: 100px;
+    height: 70px;
     float: left;
 }
 #logo{
     border: 1px black solid;
     width: 200px;
-    height: 100px;
+    height: 70px;
     margin-left: 40px;
     float: left;
 }
 #menuBar{
     position: absolute;
-    height: 100px;
+    height: 70px;
     overflow: hidden;
-    margin-left: 400px;
+    margin-left: 300px;
 }
 #menu{
     border: 1px black solid;
-    height: 100px;
+    height: 70px;
     width: 170px;
     float: left;
     font-size: 30px;
-    line-height: 100px;
+    line-height: 70px;
     text-align: center;
-    margin-left: 50px;
+    margin-left: 80px;
 }
 #but{
     float: right;
-    margin-top: 50px;
+    margin-top: 40px;
 }
 #but > input{
     font-size: 17px;
