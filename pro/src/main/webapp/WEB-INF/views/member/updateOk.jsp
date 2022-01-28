@@ -13,7 +13,7 @@
 	<c:if test="${check > 0 }">
 		<script type="text/javascript">
 			alert("회원수정 되었습니다.");
-			location.href="${root}/index.jsp";
+			location.href="${root}";
 		</script>
 	</c:if>
 	

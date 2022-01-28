@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+  <mapper namespace="com.java.img.dao.mapper.ImgMapper">
+  
+  	<insert id="insert" parameterType="com.java.img.dto.ImgDto" >
+  	INSERT INTO Img VALUES(#{Inumber},#{Icategory},#{Iname},#{Isize},#{Ipath})
+  	</insert>
+  	
+  	<select id="selectList" parameterType="String" resultType="com.java.img.dto.ImgDto">
+  	SELECT * FROM Img WHERE Icategory = #{number}
+  	<!-- 데이터 검색시 고유번호를 number이름으로 던저야됨 -->
+  	</select>
+  	
+  	<select id="select" parameterType="String" resultType="com.java.img.dto.ImgDto">
+  	SELECT * FROM Img WHERE Icategory = #{number}
+  	<!-- 데이터 검색시 고유번호를 number이름으로 던저야됨 -->
+  	</select>
+  	<update id="update">
+  	UPDATE Img SET Inumber = #{Inumber}, Icategory = #{Icategory}, Iname = #{Iname}, Isize = #{Isize}, Ipath = #{Ipath},
+  	</update>
+  	<delete id="delete" parameterType="String">
+  	DELETE from Img WHERE Icategory = #{Icategory}
+  	<!-- 관련 이미지 전부 삭제 -->
+  	</delete>
+  </mapper>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  

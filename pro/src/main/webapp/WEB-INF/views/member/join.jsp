@@ -7,7 +7,10 @@
 <head>
 <meta charset="UTF-8">
 <title>Join</title>
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script type="text/javascript" src="${root}/resources/javascript/member.js"></script>
+<script type="text/javascript" src="${root}/resources/javascript/KakaoAddress.js"></script>
+<script type="text/javascript" src="${root}/resources/javascript/getmap.js"></script>
 <link rel="stylesheet" href="${root}/resources/css/member/member.css"/>
 </head>
 <body>
@@ -59,15 +62,15 @@
 				<div class="line">
 					<label class="J_title">Address</label>
 					<span class="content">
-						<input type="text" name="Mpostalcode" size="10"/>
-						<input type="button" value="Search" onclick="zipcodeRead('${root}')"/>
+	                    <input type="text" id="sample4_postcode" placeholder="우편번호" name="Mpostalcode" size="7"/>
+	                    <input type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기"/>
 					</span>
 				</div>
 					
 				<div class="line">
 					<label class="J_title"></label>
 					<span class="content">
-						<input type="text" name="Maddress" size="34" />
+						<input type="text" id="sample4_roadAddress" placeholder="도로명주소" name="Maddress" size="30" />
 					</span>
 				</div>
 					

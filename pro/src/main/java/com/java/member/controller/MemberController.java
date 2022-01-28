@@ -19,7 +19,7 @@ public class MemberController {
 	
 	@RequestMapping(value = "/member/join.do", method = RequestMethod.GET)
 	public ModelAndView memberJoin(HttpServletRequest request, HttpServletResponse response) {	
-		return new ModelAndView("member/join");
+		return new ModelAndView("member/join.tiles");
 	}
 	@RequestMapping(value = "/member/joinOk.do", method = RequestMethod.POST)
 	public ModelAndView memberJoinOk(HttpServletRequest request, HttpServletResponse response, MemberDto memberDto) {	
@@ -39,7 +39,7 @@ public class MemberController {
 	}
 	@RequestMapping(value = "/member/login.do", method = RequestMethod.GET)
 	public ModelAndView memberLogin(HttpServletRequest request, HttpServletResponse response) {	
-		return new ModelAndView("member/login");
+		return new ModelAndView("member/login.tiles");
 	}
 	@RequestMapping(value = "/member/loginOk.do", method = RequestMethod.POST)
 	public ModelAndView memberLoginOk(HttpServletRequest request, HttpServletResponse response) {	
@@ -51,7 +51,7 @@ public class MemberController {
 	}
 	@RequestMapping(value = "/member/logout.do", method = RequestMethod.GET)
 	public ModelAndView memberLogout(HttpServletRequest request, HttpServletResponse response) {	
-		return new ModelAndView("member/logout");
+		return new ModelAndView("member/logout.tiles");
 	}
 	@RequestMapping(value = "/member/Mypage-Acc.do", method = RequestMethod.GET)
 	public ModelAndView memberMypageAcc(HttpServletRequest request, HttpServletResponse response) {
@@ -63,7 +63,7 @@ public class MemberController {
 	}
 	@RequestMapping(value = "/member/Mypage-Com.do", method = RequestMethod.GET)
 	public ModelAndView memberMypageCom(HttpServletRequest request, HttpServletResponse response) {	
-		return new ModelAndView("member/Mypage-Com");
+		return new ModelAndView("member/Mypage-Com.tiles");
 	}
 	@RequestMapping(value = "/member/Mypage-M.do", method = RequestMethod.GET)
 	public ModelAndView memberMypageM(HttpServletRequest request, HttpServletResponse response) {
@@ -91,7 +91,7 @@ public class MemberController {
 	}
 	@RequestMapping(value = "/member/zipcode.do", method = RequestMethod.GET)
 	public ModelAndView memberZipcode(HttpServletRequest request, HttpServletResponse response) {	
-		return new ModelAndView("member/zipcode");
+		return new ModelAndView("member/zipcode.tiles");
 	}
 	@RequestMapping(value = "/member/updata.do", method = RequestMethod.POST)
 	public ModelAndView memberUpdata(HttpServletRequest request, HttpServletResponse response, MemberDto memberDto) {	

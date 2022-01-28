@@ -35,7 +35,7 @@ public class MemberDaoImp implements MemberDao {
 	}
 	@Override
 	public int getCount() {
-		return sqlSessionTemplate.selectOne("getCount");
+		return sqlSessionTemplate.selectOne("MembergetCount");
 	}
 	@Override
 	public List<MemberDto> memberList() {
@@ -43,7 +43,14 @@ public class MemberDaoImp implements MemberDao {
 	}
 	@Override
 	public int update(MemberDto memberDto) {
-		return sqlSessionTemplate.update("updata", memberDto);
+		return sqlSessionTemplate.update("Memberupdata", memberDto);
+	}
+	@Override
+	public int delete(String Mid) {
+		sqlSessionTemplate.delete("Bookdelete", Mid);
+		sqlSessionTemplate.delete("ReViewdelete", Mid);
+		sqlSessionTemplate.delete("Commentdelete", Mid);
+		return sqlSessionTemplate.delete("Memberdelete", Mid);
 	}
 	
 }

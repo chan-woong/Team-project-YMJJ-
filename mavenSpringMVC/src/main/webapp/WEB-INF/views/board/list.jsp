@@ -40,19 +40,10 @@
 					<td width="120" height="30" align="center">작성일</td>
 					<td width="50" height="30" align="center">조회수</td>
 				</tr>
-				
+				<div>${boardList[0].boardNumber}</div>
 				<c:forEach var="boardDto" items="${boardList}">
-					<tr>
-						<td width="50" height="30" align="center">${boardDto.boardNumber}</td>
-						
-						<td width="300" height="30" align="left">
-						
-							<c:if test="${boardDto.sequenceLevel > 0 }">
-								<c:forEach begin="0" end="${boardDto.sequenceLevel}">
-									&nbsp;&nbsp;&nbsp;&nbsp;
-								</c:forEach>
-								[답글]
-							</c:if>
+					<div style="border: 1px black solid; width: 100px; height: 100px; float: left; margin-right: 30px;">
+					
 							
 							<a href="${root}/board/read.do?boardNumber=${boardDto.boardNumber}&pageNumber=${currengPage}">
 								${boardDto.subject}

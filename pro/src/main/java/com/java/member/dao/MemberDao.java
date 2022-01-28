@@ -20,4 +20,6 @@ public interface MemberDao {
 
 	int update(MemberDto memberDto);
 
+	int delete(String Mid);
+
 }

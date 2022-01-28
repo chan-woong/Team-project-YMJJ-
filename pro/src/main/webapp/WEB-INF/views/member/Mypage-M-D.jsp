@@ -64,7 +64,6 @@
 									<label class="title">Address</label>
 									<span class="content">
 										<input type="text" name="Mpostalcode" value="${memberDto.mpostalcode}" disabled="disabled"/>
-										<input type="button" value="Search" />
 									</span>
 							  	</div>
 								

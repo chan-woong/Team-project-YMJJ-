@@ -21,7 +21,7 @@
   	SELECT * FROM Member WHERE Mid = #{Mid}
   	</select>
   	
-  	<select id="getCount" resultType="int">
+  	<select id="MembergetCount" resultType="int">
   	SELECT COUNT(*) FROM Member
   	</select>
   	
@@ -29,10 +29,22 @@
   	SELECT * FROM Member
   	</select>
   	
-  	<update id="updata" parameterType="com.java.member.dto.MemberDto">
+  	<update id="Memberupdata" parameterType="com.java.member.dto.MemberDto">
   	UPDATE member SET Mpassword=#{Mpassword}, Mpostalcode=#{Mpostalcode}, Maddress=#{Maddress}, Memail=#{Memail}, Mcallnumber1=#{Mcallnumber1}, Mcallnumber2=#{Mcallnumber2}, Mcallnumber3=#{Mcallnumber3} 
 		WHERE Mid=#{Mid}
   	</update>
+  	<delete id="Bookdelete" parameterType="String">
+  	DELETE FROM BOOKMARK WHERE Mid = #{Mid}
+  	</delete>
+  	<delete id="ReViewdelete" parameterType="String">
+  	DELETE FROM REVIEW WHERE Mid = #{Mid}
+  	</delete>
+  	<delete id="Commentdelete" parameterType="String">
+  	DELETE FROM COMMENTS WHERE Mid = #{Mid}
+  	</delete>
+  	<delete id="Memberdelete" parameterType="String">
+  	DELETE FROM Member WHERE Mid = #{Mid}
+  	</delete>
   </mapper>   		
 
   

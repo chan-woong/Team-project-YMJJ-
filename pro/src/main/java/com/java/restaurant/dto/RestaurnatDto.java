@@ -3,7 +3,7 @@ package com.java.restaurant.dto;
 
 public class RestaurnatDto {
 	
-	private int RTnumber;
+	private String RTnumber;
 	
 	private String RTname;
 	private	String RTtype;
@@ -18,13 +18,10 @@ public class RestaurnatDto {
 	private String RTintroduce;
 	private int RTcount;
 	
-	private int group_Number;			// 그룹번호
-	private int sequence_Number;		// 글순서
-	private int sequence_Level;
-	public int getRTnumber() {
+	public String getRTnumber() {
 		return RTnumber;
 	}
-	public void setRTnumber(int rTnumber) {
+	public void setRTnumber(String rTnumber) {
 		RTnumber = rTnumber;
 	}
 	public String getRTname() {
@@ -93,33 +90,15 @@ public class RestaurnatDto {
 	public void setRTcount(int rTcount) {
 		RTcount = rTcount;
 	}
-	public int getGroup_Number() {
-		return group_Number;
-	}
-	public void setGroup_Number(int group_Number) {
-		this.group_Number = group_Number;
-	}
-	public int getSequence_Number() {
-		return sequence_Number;
-	}
-	public void setSequence_Number(int sequence_Number) {
-		this.sequence_Number = sequence_Number;
-	}
-	public int getSequence_Level() {
-		return sequence_Level;
-	}
-	public void setSequence_Level(int sequence_Level) {
-		this.sequence_Level = sequence_Level;
-	}
 	@Override
 	public String toString() {
 		return "RestaurnatDto [RTnumber=" + RTnumber + ", RTname=" + RTname + ", RTtype=" + RTtype + ", RTaddress="
 				+ RTaddress + ", RTpostalcode=" + RTpostalcode + ", RTcallnumber1=" + RTcallnumber1 + ", RTcallnumber2="
 				+ RTcallnumber2 + ", RTcallnumber3=" + RTcallnumber3 + ", RTlatitude=" + RTlatitude + ", RTlongitude="
-				+ RTlongitude + ", RTintroduce=" + RTintroduce + ", RTcount=" + RTcount + ", group_Number="
-				+ group_Number + ", sequence_Number=" + sequence_Number + ", sequence_Level=" + sequence_Level + "]";
+				+ RTlongitude + ", RTintroduce=" + RTintroduce + ", RTcount=" + RTcount + "]";
 	}
-	
+
+
 
 	
 	
