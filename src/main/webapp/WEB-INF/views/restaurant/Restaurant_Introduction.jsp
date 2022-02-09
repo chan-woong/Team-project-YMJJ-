@@ -35,16 +35,54 @@
     </div>
 
     <div id="content">
+		<c:if test="${Mid == null}">
+			<div id="btn_type">
+	        </div>
+		</c:if>
+		<c:if test="${Mid != null}">
+			<c:if test="${Mid == 'admin'}">
+				<div id="btn_type" style="margin-left: 1058px;">
+		            <input type="button" onclick="location.href='${root}/restaurant/write.do'" value="추가"/>
+					<input type="button" onclick="location.href='${root}/restaurant/update.do?RTnumber=${restaurantDto.RTnumber}&pageNumber=${pageNumber}'" value="수정"/>
+	            	<input type="button" onclick="location.href='${root}/restaurant/Restaurantdelete.do?RTnumber=${restaurantDto.RTnumber}&pageNumber=${pageNumber}'"value="삭제"/>
 
-        <div id="btn_type">
-            <input type="button" onclick="location.href='${root}/restaurant/write.do'" value="추가"/>
-			<input type="button" onclick="location.href='${root}/restaurant/Restaurant_Update.do'" value="수정"/>
-            <input type="button" onclick="location.href='${root}/restaurant/Restaurantdelete.do?RTnumber=${restaurantDto.RTnumber}&pageNumber=${pageNumber}'"value="삭제"/>
-        </div>
+      		  	</div>
+			</c:if>
+			<c:if test="${Mid != 'admin'}">
+	            
+	            <form action="${root}/bookmark/writeOk.do?root=${root}"  
+					  method="post"
+					  enctype="multipart/form-data">
+					  
+					
+					<c:if test="${check == 0}">	
+						<div id="btn_type"></div>
+					</c:if>  
+					<c:if test="${check == 1}">
+						<div id="btn_type">
+							<button style="margin-right: 5px; height: 23px; border: 0; outline: 0; background-color: white;"type="button" value="북마크 추가" onclick="location.href='${root}/bookmark/writeOk.do?RTnumber=${restaurantDto.RTnumber}&Mid=${Mid}&pageNumber=${pageNumber}&Mid=${Mid}'"><img id="img_btnsize" src="${root}/resources/img/star1.png"></button>
+      		  			</div>
+					</c:if>
+					<c:if test="${check == 2}">
+						<div id="btn_type">
+							<button style="height: 23px; border: 0; outline: 0; background-color: white;"type="button" value="북마크 제거" onclick="location.href='${root}/bookmark/bookmarkdeleteOk.do?RTnumber=${restaurantDto.RTnumber}&Mid=${Mid}&pageNumber=${pageNumber}&Mid=${Mid}'"><img id="img_btnsize" src="${root}/resources/img/star2.png"></button>
+      		  			</div>
+					</c:if>
+	            	<input type="hidden" name="Bnumber" value="${Bnumber}"/>
+	            	<input type="hidden" name="Mid" value="${Mid}"/>
+	            	<input type="hidden" name="RTnumber" value="${restaurantDto.RTnumber}"/>
+	            	<input type="hidden" name="RTname" value="${restaurantDto.RTname}"/>
+	            
+	            
+	            </form>
+
+			</c:if>
+		</c:if>
+        
 
         <div id="subject">
 
-            <div id="Restaurant_photo"><img alt="pictures" src="${root}/resources/img/${restaurantDto.RTIname}"></div>
+            <div id="Restaurant_photo"><img alt="pictures" src="${root}/resources/img/${restaurantDto.RTIname}" style="width: 380px; height: 423px; object-fit: fill;"></div>
 
             <div id="nav">
 
@@ -66,44 +104,50 @@
                    			<div id="comment_list">
 
                             <div style="overflow: hidden;">
-                                <strong style="float: left; margin-top: 2px; margin-left: 10px; margin-bottom: 2px; font-size: 13px;">이름</strong>
-                                <div style="font-size: 13px; float: left; margin-top: 2px; margin-left: 20px;">별점</div>
+                                <strong style="float: left; margin-top: 2px; margin-left: 10px; margin-bottom: 2px; font-size: 13px;">${commentsDto.mid}</strong>
+                                <div style="font-size: 13px; float: left; margin-top: 2px; margin-left: 20px;">
+                                	<c:forEach begin="0" end="${commentsDto.CMliked-1}" var="x">
+                                		<a>★</a>
+                                	</c:forEach>
+                                </div>
                             </div>
                             
-                            <div style="float: left; overflow: hidden; font-size: 13px; margin-left: 10px;">내용</div>
+                            <div style="float: left; overflow: hidden; font-size: 13px; margin-left: 10px;">${commentsDto.CMcontent}</div>
 
                         	</div>
                    			
                         </c:forEach>
                     </div>
-                    
-                    <form id="comment"
-                    	  action="${root}/comments/writeOk.do?root=${root}"  
-						  method="post"
-						  enctype="multipart/form-data">
-                        <div id="regi_comment">
-                            <strong name="id">${Mid}</strong>
-                            <input type="hidden" name="Mid" value="${Mid}"/>
-                            <input type="hidden" name="RTnumber" value="${restaurantDto.RTnumber}"/>
-
-                            <select name="CMliked" style="float: left; margin-top: 2px; margin-left: 20px; border: 0px;">
-                                <option>별점</option>
-                                <option value="1">★☆☆☆☆</option>
-                                <option value="2">★★☆☆☆</option>
-                                <option value="3">★★★☆☆</option>
-                                <option value="4">★★★★☆</option>
-                                <option value="5">★★★★★</option>
-                            </select>
-                            <textarea cols="43" name="CMcontent" rows="1" placeholder="댓글을 남겨보세요"></textarea>
-                        </div>
-
-                        <div id="btn_comment">
-                            <a href="#" type="submit" role="button" id="is_action">등록</a>
-                            <input type="submit" value="확인"/>
-                        </div>
-                        
-                    </form>
-
+                    <c:if test="${Mid != nill}">
+	                    <form id="comment"
+	                    	  action="${root}/comments/writeOk.do?root=${root}"  
+							  method="post"
+							  enctype="multipart/form-data">
+	                        <div id="regi_comment">
+	                            <strong name="id">${Mid}</strong>
+	                            <input type="hidden" name="Mid" value="${Mid}"/>
+	                            <input type="hidden" name="RTnumber" value="${restaurantDto.RTnumber}"/>
+	                            <input type="hidden" name="pageNumber" value="${pageNumber}"/>
+	
+	                            <select name="CMliked" style="float: left; margin-top: 2px; margin-left: 20px; border: 0px;">
+	                                <option>별점</option>
+	                                <option value="1">★☆☆☆☆</option>
+	                                <option value="2">★★☆☆☆</option>
+	                                <option value="3">★★★☆☆</option>
+	                                <option value="4">★★★★☆</option>
+	                                <option value="5">★★★★★</option>
+	                            </select>
+	                            <textarea cols="43" name="CMcontent" rows="1" placeholder="댓글을 남겨보세요"></textarea>
+	                        </div>
+	
+	                        <div id="btn_comment">
+	                            <input type="submit" value="등록" style="border: 0; outline: 0; background-color: white; color: gray; float: right; margin-right: 2px;"/>
+	                        </div> 
+	                    </form>
+					</c:if>
+					<c:if test="${Mid == nill}">
+						<div style="width: 340px; height: 70px; line-height: 70px; background-color: #dbdada; border-radius: 16px; margin-top: 9px;">로그인 후 작성이 가능합니다.</div>
+					</c:if>
                 </div>
 
             </div>

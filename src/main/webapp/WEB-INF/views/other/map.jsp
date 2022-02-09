@@ -31,6 +31,7 @@
 </head>
 <body>
     <div>
+    	<div id="main_title">TODAY</div>
         <div id="M_menuF">
             <div id="subtitle">FOOD</div>
             <div id="M_content">

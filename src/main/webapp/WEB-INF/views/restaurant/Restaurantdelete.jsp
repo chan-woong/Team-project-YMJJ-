@@ -14,7 +14,7 @@
 	
 	<div align="center"> 
 		<form action="${root}/restaurant/RestaurantdeleteOk.do" method="get">
-			<table border="1">
+			<table border="1" style="margin-top: 300px">
 				<tr>
 					<td align="center" width="400">
 						<li>정말로 삭제하시겠습니까?</br></li>

@@ -38,7 +38,7 @@
 			<div id="category">
 				<div id="detail" style="border-left: 0px;"></div>
 				<div id="detail" style="cursor: pointer;"
-					onclick="location.href='https://www.naver.com/';">
+					onclick="location.href='${root}/community/ReviewList.do'">
 					<a>Review</a>
 				</div>
 				
@@ -63,8 +63,12 @@
 					<span id="viewcount"
 						style="font-size: 50px; margin-top: 30px; margin-left: 30px;">Notice</span>
 					<span id="mid1_button">
-					<input  type="button" value="작성" onclick="location.href='${root}/community/NoticeWrite.do'"
-							style="margin-right: 50px; margin-top: 50px; height: 30px; width: 50px;" /></span>
+					
+						<c:if test="${Mid == 'admin' }">
+							<input  type="button" value="작성" onclick="location.href='${root}/community/NoticeWrite.do'"
+								style="margin-right: 50px; margin-top: 50px; height: 30px; width: 50px;" />
+						</c:if>
+					</span>
 				</div>
 				
 				<!-- 메인 고지사항 -->
@@ -81,8 +85,10 @@
 								<details>
 									<summary>${noticeBoardDto.ctitle}</summary>
 									<p>${noticeBoardDto.ccontent}
-										<input id="button2" type="button" value="삭제" onclick="delFun('${root}','${noticeBoardDto.cnumber}')"/>
-										<input id="button2" type="button" value="수정" onclick="upFun('${root}','${noticeBoardDto.cnumber}')"/>
+										<c:if test="${Mid == 'admin' }">
+											<input id="button2" type="button" value="삭제" onclick="delFun('${root}','${noticeBoardDto.cnumber}')"/>
+											<input id="button2" type="button" value="수정" onclick="upFun('${root}','${noticeBoardDto.cnumber}')"/>
+										</c:if>
 									</p>
 								</details>
 							</div>

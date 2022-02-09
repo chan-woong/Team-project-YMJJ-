@@ -26,7 +26,6 @@ width: 100%;
 height: 500px;
 }
 #mainView{
-border : 1px black solid;
 width: 1900px;
 height: 830px;
 margin: 10px;
@@ -68,9 +67,9 @@ color: white;
 <body>
 	<div id="mainView">
 		<div class="slider">
-	        <img src="${root}/resources/img/고양이3.jfif">
-	        <img src="${root}/resources/img/고양이2.jfif">
-	       <img src="${root}/resources/img/고양이.jfif">
+	        <img src="${root}/resources/img/제주도1.jpg">
+	        <img src="${root}/resources/img/제주도2.jpg">
+	       <img src="${root}/resources/img/제주도3.jpg">
 	    </div>
 	</div>
 	<div id="select">

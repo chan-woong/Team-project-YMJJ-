@@ -9,7 +9,7 @@
 	</insert>
 	 
 	<select id="IRead" parameterType="String" resultType="com.java.aboutjeju.dto.AboutjejuDto">
-		SELECT * from landmark where LMcategory =  #{introduction}
+		SELECT * from landmark where LMcategory =  #{introduction} 
 	</select>
 	
 	<select id="LRead" parameterType="String" resultType="com.java.aboutjeju.dto.AboutjejuDto">
@@ -23,5 +23,6 @@
 	<select id="ARead" parameterType="String" resultType="com.java.aboutjeju.dto.AboutjejuDto">
 		SELECT * from landmark where LMcategory = #{activites}
 	</select> 
+	<!-- count  -->
 	
 </mapper>

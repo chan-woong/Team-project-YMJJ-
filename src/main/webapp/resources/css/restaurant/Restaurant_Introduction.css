@@ -1,180 +1,157 @@
 @charset "UTF-8";
 
-body{
-    width: 1200px;
-    margin: 0px auto;
-    border: 0px solid black;
-    overflow: hidden;
+body {
+	margin: 0px auto;
+	border: 0px solid black;
+	overflow: hidden;
 }
 
-body > #title{
-    border: 0px solid red;
-    text-align: center;
-
-    font-size: 50px;
+body>#title {
+	border: 0px solid red;
+	text-align: center;
+	font-size: 50px;
 }
 
-body > #content{
-    
-    width: 1200px;
-    height: 500px;
-    
+body>#content {
+	width: 1200px;
+	height: 500px;
 }
 
-#btn_type{
-
-  border: 0px solid red;
-
-  margin-left: 1056px;
-  margin-bottom: 20px;
-  
-  
+#btn_type {
+	border: 0px solid red;
+	margin-left: 1153px;
+	margin-bottom: 20px;
 }
 
-#subject{
- 
-    height: 500px;
-    border: 2px solid black;
-    overflow: hidden;
+#subject {
+	height: 500px;
+	border: 2px solid black;
+	overflow: hidden;
 }
 
-#Restaurant_photo{
-    width: 380px;
-    height: 453px;
-    border: 2px solid red;
-    
-    float: left;
-
-    margin-left: 28px;
-    margin-top: 20px;
-
-    text-align: center;
-    line-height: 555px;
+#Restaurant_photo {
+	width: 380px;
+	height: 453px;
+	float: left;
+	margin-left: 28px;
+	margin-top: 20px;
+	text-align: center;
+	line-height: 555px;
 }
 
-#content > #subject > #Restaurant_photo > img{
-	
+#content>#subject>#Restaurant_photo>img {
 	max-width: 100%;
- 	max-height: 100%;
+	max-height: 100%;
 }
 
-#nav{
-    width: 380px;
-    height: 453px;
-    border: 2px seagreen solid;
-    float: left;
-
-    margin-top: 20px;
+#nav {
+	width: 380px;
+	height: 453px;
+	float: left;
+	margin-top: 20px;
 }
 
-#content > #subject > #nav > #rstitle > #restaurant_name{
-    border: 2px solid black;
-
-    margin-left: 10px;
-    margin-right: 10px;
-
-    text-align: center;
+#content>#subject>#nav>#rstitle>#restaurant_name {
+	border: 2px solid black;
+	margin-left: 10px;
+	margin-right: 10px;
+	text-align: center;
 }
 
-#content > #subject > #nav > #rstitle > #restaurant_introduction{
-    
-    height: 175px;
-    
-    border: 2px solid black;
-
-    margin-top: 20px;
-    margin-left: 10px;
-    margin-right: 10px;
-
-    text-align: center;
+#content>#subject>#nav>#rstitle>#restaurant_introduction {
+	height: 175px;
+	border: 2px solid black;
+	margin-top: 20px;
+	margin-left: 10px;
+	margin-right: 10px;
+	text-align: center;
 }
 
-#content > #subject > #nav > #review{
-
-    height: 205px;
-
-    border: 2px solid black;
-
-    margin-top: 20px;
-    margin-left: 10px;
-    margin-right: 10px;
-
-    text-align: center;
-
-    position: relative;
+#content>#subject>#nav>#review {
+	height: 205px;
+	border: 2px solid black;
+	margin-top: 20px;
+	margin-left: 10px;
+	margin-right: 10px;
+	text-align: center;
+	position: relative;
 }
 
-#content > #subject > #nav > #review > #review_title{
-
-    position: absolute;
-    top: -15px;
-    left: 5px;
-    height: 15px;
-    width: 80px;
-    background-color: white;
-    border: 2px solid white;
-    text-align: center;
-
+#content>#subject>#nav>#review>#review_title {
+	position: absolute;
+	top: -15px;
+	left: 5px;
+	height: 15px;
+	width: 80px;
+	background-color: white;
+	border: 2px solid white;
+	text-align: center;
 }
 
-#content > #subject > #nav > #review > #comment_list_box{
-    border: 0px solid red;
-    height: 115px;
+#content>#subject>#nav>#review>#comment_list_box {
+	border: 0px solid red;
+	height: 115px;
+	width: 370px;
+	-ms-overflow-style: none;
 }
 
-#content > #subject > #nav > #review > #comment_list_box > #comment_list{
-    width: 340px;
-    height: 45px;
-    border: 2px solid #b7b7b7;
-    border-radius: 10px;
-    margin-top: 8px;
-    margin-left: 5px;
+#comment_list_box::-webkit-scrollbar {
+	display: none;
 }
 
-#content > #subject > #nav > #review > #comment{
-    width: 340px;
-    height: 70px;
-    border: 2px solid #b7b7b7;
-    border-radius: 10px;
-    margin-top: 8px;
-    margin-left: 5px;
+#content>#subject>#nav>#review>#comment_list_box>#comment_list {
+	width: 340px;
+	height: 45px;
+	border: 2px solid #b7b7b7;
+	border-radius: 10px;
+	margin-top: 8px;
+	margin-left: 5px;
 }
 
-#content > #subject > #nav > #review > #comment > #regi_comment > strong{
-    float: left;
-    margin-top: 2px;
-    margin-left: 10px;
-    margin-bottom: 2px;
-    font-size: 13px;
+#content>#subject>#nav>#review>#comment {
+	width: 340px;
+	height: 70px;
+	border: 2px solid #b7b7b7;
+	border-radius: 10px;
+	margin-top: 8px;
+	margin-left: 5px;
 }
 
-#content > #subject > #nav > #review > #comment > #regi_comment > textarea{
-    overflow: hidden; 
-    overflow-wrap: break-word; 
-    height: 17px;
-
-    border: 0;
-    resize: none;
+#content>#subject>#nav>#review>#comment>#regi_comment>strong {
+	float: left;
+	margin-top: 2px;
+	margin-left: 10px;
+	margin-bottom: 2px;
+	font-size: 13px;
 }
 
-#content > #subject > #nav > #review > #comment > #btn_comment > a{
-    float: right;
-    margin-top: 2px;
-    margin-right: 10px;
-    margin-bottom: 2px;
-
-    font-size: 13px;
-
-    color: #b7b7b7;
-
-    text-decoration: none;
+#content>#subject>#nav>#review>#comment>#regi_comment>textarea {
+	overflow: hidden;
+	overflow-wrap: break-word;
+	height: 17px;
+	border: 0;
+	resize: none;
 }
 
-#kakaomap{
-    width: 380px;
-    height: 453px;
-    border: 2px solid black;
-    float: left;
+#content>#subject>#nav>#review>#comment>#btn_comment>a {
+	float: right;
+	margin-top: 2px;
+	margin-right: 10px;
+	margin-bottom: 2px;
+	font-size: 13px;
+	color: #b7b7b7;
+	text-decoration: none;
+}
 
-    margin-top: 20px;
+#kakaomap {
+	width: 380px;
+	height: 453px;
+	border: 2px solid black;
+	float: left;
+	margin-top: 20px;
+}
+
+#img_btnsize {
+	max-width: 100%;
+	max-height: 100%;
 }

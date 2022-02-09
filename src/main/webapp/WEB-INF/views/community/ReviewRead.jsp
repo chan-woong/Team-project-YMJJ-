@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt"  prefix="fmt"%>
 <% pageContext.setAttribute("replaceChar", "\n"); %>
 <!DOCTYPE html>
 <html>
@@ -42,7 +43,7 @@
 					<a>Event</a>
 				</div>
 				<div id="detail"
-					onclick="location.href='${root}/community/Notice.do';">
+					onclick="location.href='${root}/community/Notice3.do';">
 					<a>Notice</a>
 				</div>
 				<div id="detail"
@@ -50,7 +51,8 @@
 			</div>
 			<div id="content">
 				<div id="mid1">
-					<span id="viewcount">조회수 : ${reviewDto.RVcount} </span>  
+					<span id="viewDate"><fmt:formatDate value="${reviewDto.RVdate}" pattern="yyyy-MM-dd"/></span>
+					<span id="viewcount"> 조회수 : ${reviewDto.RVcount}</span>  
 					<span id="mid1_button">
 						<c:if test="${Mid == reviewDto.writer || Mid == 'admin'}">
 							<input type="button" value="수정" onclick="upFun('${root}', '${reviewDto.RVnumber}', '${pageNumber}')"/>

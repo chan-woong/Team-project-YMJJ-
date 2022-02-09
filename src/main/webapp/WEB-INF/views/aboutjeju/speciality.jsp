@@ -35,7 +35,7 @@
                 		
                 		<!-- 가운데 큰 사진 -->
                 		<div style="border : 0px black solid; width: 651px; height: 450px; padding: 10px; margin-top: 30px;">
-                			<img width="600px" height="400px" alt="" src="${root}/img/${Ilist[1].iname}" onclick="btnClick(${Ilist}, 1)"/>
+                			<a href=""><img width="600px" height="400px" alt="" src="${root}/img/${Ilist[1].iname}" onclick="btnClick(${Ilist}, 1)"/></a>
                 		</div>
                 		
                 		<!-- 오른쪽 사진 -->

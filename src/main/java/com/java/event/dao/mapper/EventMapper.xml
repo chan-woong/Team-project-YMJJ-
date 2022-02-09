@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.java.event.dao.mapper.EventMapper">
+	<resultMap type="com.java.event.dto.EventDto" id="eventDto">
+		<result column="enumber" property="enumber" />
+		<result column="etitle" property="etitle" />
+		<result column="econtent" property="econtent" />
+
+		<result column="group_number" property="groupnumber" />
+		<result column="sequence_number" property="sequencenumber" />
+		<result column="sequence_level" property="sequencelevel" />
+
+		<result column="edate" property="edate" />
+		<result column="efilename" property="efilename" />
+		<result column="epath" property="epath" />
+		<result column="efilesize" property="efilesize" />
+	</resultMap>
+
+	<select id="count" resultType="int">
+		SELECT COUNT(*) FROM event
+	</select>
+
+
+	<select id="eventList" parameterType="java.util.HashMap"
+		resultMap="eventDto">
+  		<![CDATA[
+  			select * from
+  					(select rownum rnum, a.* from
+  							(select * from  event order by edate desc) a)b
+  			where b.rnum >=#{startRow} and b.rnum <=#{endRow}
+		]]>
+	</select>
+
+	<insert id="eventInsert"
+		parameterType="com.java.event.dto.EventDto">
+		INSERT INTO event(enumber, etitle, econtent, edate, group_number,
+		sequence_number, sequence_level, efilename, epath, efilesize)
+		VALUES(event_enumber_seq.nextval, #{etitle}, #{econtent},
+		SYSDATE,#{groupnumber},#{sequencenumber},#{sequencelevel},
+		#{efilename}, #{epath}, #{efilesize})
+
+	</insert>
+
+	<select id="eventGroupNumberMax" resultType="int">
+		SELECT NVL(MAX(group_number), 0) FROM event
+	</select>
+
+	<select id="eventRead" parameterType="int" resultMap="eventDto">
+		SELECT * FROM event WHERE enumber=#{enumber}
+	</select>
+
+	<delete id="eventDelete" parameterType="java.util.HashMap">
+		DELETE FROM event WHERE enumber=#{enumber}
+	</delete>
+
+	<update id="eventUpdate"
+		parameterType="com.java.event.dto.EventDto">
+		UPDATE event SET etitle=#{etitle}, econtent=#{econtent}
+		WHERE enumber=#{enumber}
+	</update>
+</mapper>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  

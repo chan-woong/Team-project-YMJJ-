@@ -26,7 +26,7 @@
                <div style="border : 2px black solid; width: 1175px; height: 640px; margin-top: 40px;margin-left: 40px; overflow: hidden; position: relative;">
 				<div style="float: left;">
 					<div id="imgsize">
-						<img id="secimg" alt="" src="${root}/img/${Ilist[0].iname}"/>
+						<img id="secimg" alt="" src="${root}/img/${Ilist[0].iname} "/>
 						<a id="sectext" style="width:149px;height:30px;">${Ilist[0].LMtitle}</a>
 					</div>
 					<div id="imgsize" >

@@ -1,5 +1,4 @@
 @charset "UTF-8";
- @charset "UTF-8";
 *{
 margin: 0px auto;
 padding: 0px auto;
@@ -44,6 +43,7 @@ width: 153.6px;
 height: 30px;
 text-align: center;
 border-top: 0px;
+text-decoration-line: none;
 }
 
 #subtitle{
@@ -77,21 +77,12 @@ margin-left: 10px;
 	margin-left: 20px; 
 	float: right;
 }
-#secimg{
+#img{
 	border : 0px black solid; 
 	width: 100%; 
 	height: 100%; 
 }
-#thimg{
-	border : 0px black solid; 
-	width: 100%; 
-	height: 100%; 
-}
-#forimg{
-	border : 0px black solid; 
-	width: 100%; 
-	height: 100%; 
-}
+
 #imgsize > input{
 	margin-right: 1px black solid;
 	font-size: 17pt;
@@ -103,3 +94,6 @@ margin-left: 10px;
 textarea{
 	width: 148px;
 }
+#conttext{
+	width: 490px; height: 250px; border: 0px black solid;
+}  

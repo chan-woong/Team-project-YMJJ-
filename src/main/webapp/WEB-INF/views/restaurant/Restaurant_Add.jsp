@@ -90,10 +90,13 @@
                             <span class="content">
                                 <select name="RTtype">
                                     <option>종류</option>
+                                    <option value="회집">회집</option>
                                     <option value="한식">한식</option>
-                                    <option value="양식">양식</option>
-                                    <option value="중식">중식</option>
+                                    <option value="중국식">중국식</option>
                                     <option value="일식">일식</option>
+                                    <option value="까페">까페</option>
+                                    <option value="식육(숯불구이)">식육(숯불구이)</option>
+                                    <option value="외국음식전문점(인도.태국등)">외국음식전문점(인도.태국등)</option>
                                 </select>
                             </span>
                         </div>

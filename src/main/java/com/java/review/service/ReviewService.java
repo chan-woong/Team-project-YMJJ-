@@ -8,15 +8,15 @@ public interface ReviewService {
 	public void reviewWrite(ModelAndView mav);
 
 	public void reviewWriteOk(ModelAndView mav);
-	
+
 	public void reviewRead(ModelAndView mav);
-	
+
 	public void reviewDeleteOk(ModelAndView mav);
-	
+
 	public void reviewUpdate(ModelAndView mav);
-	
+
 	public void reviewUpdateOk(ModelAndView mav);
-	
+
 	public void RTsearch(ModelAndView mav);
-	
+
 }

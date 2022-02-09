@@ -18,30 +18,29 @@
 		<div id="menuF">
 			<div id="category">
 				<div id="detail" style="border-left: 0px;"></div>
-				<div id="detail" style="cursor: pointer;"
-					onclick="location.href='https://www.naver.com/';">
+				<div id="detail" style="border-right: 0px;"
+					onclick="location.href='${root}/community/ReviewList.do';">
 					<a>Review</a>
 				</div>
-				<div id="detail" style="cursor: pointer;"
-					onclick="location.href='http://122.34.87.29:8181/practice1/css/EventList.jsp';">
+				<div id="detail"
+					onclick="location.href='${root}/community/EventList.do';">
 					<a>Event</a>
 				</div>
-				<div id="detail" style="border-right: 0px; cursor: pointer;"
-					onclick="location.href='https://maplestory.nexon.com/News/Notice';">
+				<div id="detail"
+					onclick="location.href='${root}/community/Notice3.do';">
 					<a>Notice</a>
 				</div>
 				<div id="detail"
 					style="height: 630px; border-left: 0px; border-bottom: 0px;"></div>
 			</div>
 			
-			
-			
 			<!-- 본문 -->
 			<form action="${root}/community/NoticeWriteOk.do" method="post">			
 			<div id="content">			
 				<div id="mid1" style="height: 118px;">
 					<span id="viewcount"
-						style="font-size: 50px; margin-top: 30px; margin-left: 30px;">Notice</span>
+						style="font-size: 50px; margin-top: 30px; margin-left: 30px;">Notice
+					</span>
 				</div>
 
 				<div id="noticemid1">
@@ -86,5 +85,7 @@
 				</div>						
 			</div>
 			</form>
+		</div>
+	</div>
 </body>
 </html>

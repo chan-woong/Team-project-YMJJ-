@@ -22,9 +22,6 @@ public interface MemberService {
 
 	void MypageCom(ModelAndView mav);
 
-	void bookmarkAdd(ModelAndView mav);
-
-	void bookmarkDel(ModelAndView mav);
-
+	void commentDel(ModelAndView mav);
 
 }

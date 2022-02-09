@@ -1,4 +1,5 @@
-@charset "UTF-8";
+a
+ @charset "UTF-8";
 
 * {
 	margin: 0px auto;
@@ -6,16 +7,17 @@
 	box-sizing: border-box;
 }
 
-#title{
-width: 1920px;
-height: 108px;
-text-align: center;
-margin-top: 20px;
-font-size: 50px;
-font-weight: bolder;
+#title {
+	width: 1920px;
+	height: 108px;
+	text-align: center;
+	margin-top: 20px;
+	font-size: 50px;
 }
-#title > a{
-    font-size: 50px;
+
+#title>a {
+	font-size: 50px;
+	font-weight: bolder;
 }
 
 #menuF {
@@ -52,6 +54,13 @@ font-weight: bolder;
 
 #mid1 {
 	height: 50px;
+}
+
+#viewDate {
+	font-weight: bold;
+	float: left;
+	line-height: 50px;
+	margin-left: 15px;
 }
 
 #viewcount {
@@ -117,6 +126,7 @@ font-weight: bolder;
 	font-size: 30px;
 	margin-top: 0px;
 	cursor: pointer;
+	width: 1244px;
 }
 
 #noticemid1 {
@@ -154,28 +164,27 @@ font-weight: bolder;
 	float: left;
 }
 
-
-#card{
+#card {
 	float: left;
 	width: 638px;
 	height: 315px;
 	margin: 6px;
 	border: 1px gray solid;
+	border-radius: 10px;
 	box-sizing: border-box;
 }
 
-#card_content{
+#card_content {
 	float: left;
 	width: 394px;
 	height: 250px;
 	padding: 50px;
 	box-sizing: border-box;
-	word-break:break-all;
+	word-break: break-all;
 	overflow: hidden;
 }
 
-
-#card_title{
+#card_title {
 	float: left;
 	width: 242px;
 	height: 100%;
@@ -183,7 +192,7 @@ font-weight: bolder;
 	text-align: center;
 }
 
-#card_frame{
+#card_frame {
 	margin-right: 10px;
 	display: table-cell;
 	vertical-align: middle;
@@ -193,12 +202,12 @@ font-weight: bolder;
 	box-sizing: border-box;
 }
 
-#card_frame img{
+#card_frame img {
 	max-width: 95%;
 	max-height: 100%;
 }
 
-#card_text{
+#card_text {
 	position: absolute;
 	left: 0;
 	bottom: 0px;
@@ -209,18 +218,18 @@ font-weight: bolder;
 	box-sizing: border-box;
 }
 
-#card_text>#card_text2{
-	height:40px;
-	width:395px;
+#card_text>#card_text2 {
+	height: 40px;
+	width: 395px;
 	line-height: 40px;
 	border-top: 1px gray solid;
 	box-sizing: border-box;
 	margin-left: -396px;
-	margin-bottom:-40px;
+	margin-bottom: -40px;
 }
 
-#reviewListBot{
-	position:absolute;
+#reviewListBot {
+	position: absolute;
 	width: 1305.6px;
 	height: 50px;
 	text-align: center;
@@ -228,14 +237,15 @@ font-weight: bolder;
 	top: 670px;
 }
 
-#reviewListBot > a {
+#reviewListBot>a {
 	line-height: 50px;
 	margin-right: 20px;
 }
 
-#button2{
+#button2 {
 	float: right;
-	margin-right: 10px; 
+	margin-right: 10px;
+	margin-top: 10px;
 }
 
 #EventCard {
@@ -257,13 +267,13 @@ font-weight: bolder;
 	width: 160px;
 }
 
-#EventButton > #button1 {
+#EventButton>#button1 {
 	width: 25px;
 	height: 25px;
 	float: left;
 }
 
-#searchBox{
+#searchBox {
 	margin-left: 20px;
 	margin-top: 15px;
 }

@@ -7,7 +7,7 @@ public class CommentsDto {
 	private String RTnumber;
 	private int CMliked;
 	private String CMcontent;
-	
+	private String RTname;
 	public int getCMnumber() {
 		return CMnumber;
 	}
@@ -38,11 +38,16 @@ public class CommentsDto {
 	public void setCMcontent(String cMcontent) {
 		CMcontent = cMcontent;
 	}
+	public String getRTname() {
+		return RTname;
+	}
+	public void setRTname(String rTname) {
+		RTname = rTname;
+	}
 	@Override
 	public String toString() {
 		return "CommentsDto [CMnumber=" + CMnumber + ", Mid=" + Mid + ", RTnumber=" + RTnumber + ", CMliked=" + CMliked
-				+ ", CMcontent=" + CMcontent + "]";
+				+ ", CMcontent=" + CMcontent + ", RTname=" + RTname + "]";
 	}
 	
-
 }

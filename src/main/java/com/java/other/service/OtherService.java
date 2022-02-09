@@ -9,5 +9,5 @@ public interface OtherService {
 	void selectRestaurnat(ModelAndView mav);
 
 	void OtherToday(ModelAndView mav);
-	
+
 }

@@ -12,6 +12,8 @@ public class AboutjejuDto {
 	private String Iname;			//이미지 이름
 	private long Isize;				//이미지 사이즈
 	private String Ipath;
+	
+	
 	public int getLMnumber() {
 		return LMnumber;
 	}

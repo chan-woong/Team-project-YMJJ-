@@ -22,32 +22,48 @@
             <div id="content">
                 <div style="border : 2px black solid; width: 1175px; height: 640px; margin-top: 40px;margin-left: 40px;">
                     <div id="mycomment">
+                        <div id="subtitle">My Review</div>
+                        <div id="commentView">
+                        	<table border="1">
+								<c:forEach var="reviewDto" items="${reviewList}">
+									<tr onclick="location.href='${root}/community/ReviewRead.do?RVnumber=${reviewDto.RVnumber}&pageNumber=1'">
+									<td width="150px" height="30px" align="center">${reviewDto.RTname}</td>
+									<td width="200px" height="30px" align="left">${reviewDto.RVtitle}</td>
+									<td width="300px" height="30px" align="center">${reviewDto.RVcontent}</td>
+									</tr>
+								</c:forEach>
+							</table>
+                        </div>
                         <div id="subtitle">My Comment</div>
                         <div id="commentView">
                         	<table border="1">
-								<tr>
-									<td width="200px" height="30px" align="center">가게이름</td>
-									<td width="200px" height="30px" align="center">TITLE</td>
-									<td width="200px" height="30px" align="center">CONTENT</td>
-								</tr>
-								
-								<c:forEach var="reviewDto" items="${reviewList}">
+								<c:forEach var="CommentList" items="${CommentList}">
 									<tr>
-									<td width="150px" height="30px" align="center">${reviewDto.RTname}</td>
-									
-									<td width="200px" height="30px" align="left">${reviewDto.RVtitle}</td>
-									
-									<td width="300px" height="30px" align="center">${reviewDto.RVcontent}</td>
+									<td width="150px" height="30px" align="center">${CommentList.RTname}</td>
+									<td width="200px" height="30px" align="left">
+										<c:forEach begin="0" end="${CommentList.CMliked-1}">
+	                                		<a>★</a>
+	                                	</c:forEach>
+									</td>
+									<td width="265px" height="30px" align="center">${CommentList.CMcontent}</td>
+									<td style="border: 0; outline: 0; background-color: white; color: gray; float: right; margin-right: 2px;" onclick="location.href='${root}/comments/Delete.do?CMnumber=${CommentList.CMnumber}&Mid=${CommentList.mid}'">삭제</td>
 									</tr>
 								</c:forEach>
 							</table>
                         </div>
                     </div>
                     <div id="bookmark">
-                        <div id="subtitle">Bookmark</div>
+                        <div id="subtitle">BookMark</div>
                         <div id="BookmarkView">
                   		<c:forEach var="bookDto" items="${BookmarkList}">
-                  			<div>${bookDto.bnumber}</div>
+                  			<div onclick="location.href='${root}/restaurant/introduction.do?RTnumber=${bookDto.RTnumber}&pageNumber=1&Mid=${bookDto.mid}'">
+                  				<img src="${root}/resources/img/${bookDto.RTIname}" style="width: 85px; height: 75px;"/>
+                  				<div id="I${bookDto.RTname}" style="font-weight: bolder; text-align: center;"></div>
+	                  			<script type="text/javascript">
+	                  			var name = "${bookDto.RTname}";
+	                  			document.getElementById('I${bookDto.RTname}').innerHTML = name.substr(0, 5);
+	                  			</script>
+							</div>
 						</c:forEach>
 						</div>
                     </div>

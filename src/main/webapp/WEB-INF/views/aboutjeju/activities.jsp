@@ -11,7 +11,7 @@
 </head>
 <body>
      <div>
-        <div id="title"><a>AboutJEJU</a></div>
+        <div id="title"><a>About JEJU</a></div>
         <div id="menuF">
             <div id="category">
                 <div id="detail" style="border-left: 0px;"></div>

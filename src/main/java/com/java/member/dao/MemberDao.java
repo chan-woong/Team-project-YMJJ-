@@ -2,6 +2,7 @@ package com.java.member.dao;
 
 import java.util.List;
 
+import com.java.comments.dto.CommentsDto;
 import com.java.member.dto.BookmarkDto;
 import com.java.member.dto.MemberDto;
 import com.java.member.dto.SimpleReviewDto;
@@ -26,11 +27,10 @@ public interface MemberDao {
 
 	List<SimpleReviewDto> getReview(String parameter);
 
-	int Markinsert(String Mid, String RTnumber);
-
-	int MarkDel(String Mid, String RTnumber);
-
 	List<BookmarkDto> getBook(String Mid);
 
+	List<CommentsDto> getComment(String parameter);
+
+	int commentDel(String parameter);
 
 }

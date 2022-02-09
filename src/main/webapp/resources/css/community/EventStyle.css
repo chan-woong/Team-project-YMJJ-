@@ -15,6 +15,7 @@
 
 #title>a {
 	font-size: 50px;
+	font-weight: bolder;
 }
 
 #menuF {
@@ -24,6 +25,7 @@
 	transform: translateX(-55%) translateY(-50%);
 	width: 1536px;
 	height: 750px;
+	margin-top: 50px;
 }
 
 #category {
@@ -38,6 +40,10 @@
 	height: 750px;
 	float: left;
 	border-left: 0px;
+}
+
+.content_box {
+	margin-left: 20px;
 }
 
 #detail {

@@ -14,17 +14,12 @@ public class LogAspect {
 	@Around(value = "within(com.java..*)")
 	public Object advice(ProceedingJoinPoint joinPoint) {
 		Object obj=null;
-		
 		try {
-			
 			logger.info(LogMsg +  joinPoint.getTarget().getClass().getName() + "\t\t" + joinPoint.getSignature().getName());
-			
 			obj=joinPoint.proceed();
-			
 		}catch(Throwable e) {
 			e.printStackTrace();
 		}
-		
 		return obj;
 	}
 }

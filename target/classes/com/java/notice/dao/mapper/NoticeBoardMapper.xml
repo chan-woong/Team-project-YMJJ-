@@ -2,64 +2,55 @@
 <!DOCTYPE mapper
     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-    
-  <mapper namespace="com.java.notice.dao.mapper.NoticeBoardMapper">
-  	<resultMap type="com.java.notice.dto.NoticeBoardDto" id="noticeBoardDto">
-  		<result column="Cnumber" property="cnumber"/>
-  		<result column="Ccategory" property="ccategory"/>
-  		<result column="Ctitle" property="ctitle"/>
-  		<result column="Ccontent" property="ccontent"/>  	
-  	</resultMap>
-  	
-  	
-  	 
-  	<insert id="noticeBoardInsert" parameterType="com.java.notice.dto.NoticeBoardDto">
-	  	INSERT INTO Community(CNUMBER, CCATEGORY, CTITLE, CCONTENT) 
-		VALUES(Community_Cnumber_seq.nextval, #{ccategory}, #{ctitle}, #{ccontent})
-  	</insert>
-  	
-  	
-  	
-  	
-  	<select id="noticeBoardCount" resultType="int">
-  		SELECT COUNT(*) FROM Community
-  	</select>
-  	
-  	<select id="noticeBoardList" parameterType="java.util.HashMap" resultMap="noticeBoardDto">
+
+<mapper namespace="com.java.notice.dao.mapper.NoticeBoardMapper">
+	<resultMap type="com.java.notice.dto.NoticeBoardDto"
+		id="noticeBoardDto">
+		<result column="Cnumber" property="cnumber" />
+		<result column="Ccategory" property="ccategory" />
+		<result column="Ctitle" property="ctitle" />
+		<result column="Ccontent" property="ccontent" />
+	</resultMap>
+
+	<insert id="noticeBoardInsert"
+		parameterType="com.java.notice.dto.NoticeBoardDto">
+		INSERT INTO Community(CNUMBER, CCATEGORY, CTITLE, CCONTENT)
+		VALUES(Community_Cnumber_seq.nextval, #{ccategory}, #{ctitle},
+		#{ccontent})
+	</insert>
+
+	<select id="noticeBoardCount" resultType="int">
+		SELECT COUNT(*) FROM Community
+	</select>
+
+	<select id="noticeBoardList" parameterType="java.util.HashMap"
+		resultMap="noticeBoardDto">
   		<![CDATA[
-  			select * from (select * from community order by cnumber desc)
-			where cnumber>=#{startRow} and cnumber<=#{endRow} and Ccategory='1'
+  		select ROWNUM, a.* from (select * from community order by cnumber desc) a  where ROWNUM >= #{startRow} and ROWNUM <= #{endRow} and Ccategory='1'
 		]]>
-  	</select>
-  	
-  	
-  	<select id="noticeBoardRead" parameterType="int" resultMap="noticeBoardDto">
-  		select * from community where cnumber=#{cnumber}
-  	</select>
-  	
-  	<delete id="noticeBoardDelete" parameterType="java.util.HashMap">
-  		DELETE FROM community WHERE cnumber=#{cnumber}
-  	</delete>
-  	
-  	<update id="noticeBoardUpdate" parameterType="com.java.notice.dto.NoticeBoardDto">
-  		UPDATE community SET ctitle=#{ctitle}, ccontent=#{ccontent}
-  		WHERE cnumber=#{cnumber}
-  	</update>
-  	
-  	<!-- 
-  	<update id="boardReadCount" parameterType="int">
-  		UPDATE board SET read_count=read_count+1 WHERE board_number=#{boardNumber}
-  	</update>
-  	
-  	
-  	
-  	<delete id="boardDelete" parameterType="java.util.HashMap">
-  		DELETE FROM board 
-  		WHERE board_number=#{boardNumber} AND password=#{password}
-  	</delete>
-  	
-  	 -->
-  </mapper>
+	</select>
+
+
+	<select id="noticeBoardRead" parameterType="int"
+		resultMap="noticeBoardDto">
+		select * from community where cnumber=#{cnumber}
+	</select>
+
+	<delete id="noticeBoardDelete" parameterType="java.util.HashMap">
+		DELETE FROM community WHERE cnumber=#{cnumber}
+	</delete>
+
+	<update id="noticeBoardUpdate"
+		parameterType="com.java.notice.dto.NoticeBoardDto">
+		UPDATE community SET ctitle=#{ctitle}, ccontent=#{ccontent}
+		WHERE cnumber=#{cnumber}
+	</update>
+
+	<!-- <update id="boardReadCount" parameterType="int"> UPDATE board SET read_count=read_count+1 
+		WHERE board_number=#{boardNumber} </update> <delete id="boardDelete" parameterType="java.util.HashMap"> 
+		DELETE FROM board WHERE board_number=#{boardNumber} AND password=#{password} 
+		</delete> -->
+</mapper>
   
   
   

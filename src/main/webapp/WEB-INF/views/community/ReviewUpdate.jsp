@@ -153,9 +153,8 @@ function RTsearch(root){
 						</div>
 					</div>
 					<div id="mid5">
-						<span>
-<!-- 							<input type="file" name="file" id="imageSelector" accept="image/*" onchange="setThumbnail(event);"/> -->
-<%-- 							${reviewDto.RVimgname} --%>
+						<span> 
+							<input type="file" name="file" id="imageSelector" accept="image/*" onchange="setThumbnail(event);"/>
 						</span>
 					</div>
 					<div id="mid6">

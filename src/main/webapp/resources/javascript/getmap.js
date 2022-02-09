@@ -41,7 +41,7 @@ function processJson() {
 	var obj=JSON.parse(xhr.responseText);
 		var y = obj.documents[0].y;
 		var x = obj.documents[0].x;
-		alert(y + "\n" + x);
+		//alert(y + "\n" + x);
 		document.getElementById('y').value = y;
 		document.getElementById('x').value = x;
 

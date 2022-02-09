@@ -66,7 +66,7 @@
 			<div class="ranking_box"> <!-- 랭킹 박스 -->
 				<c:forEach var="ranking" items="${rankingList}">
 					<div id="rankingView">
-						<div id="Rimg"><img src=""></div>
+						<img id="Rimg" src="${root}/resources/img/${ranking.RTIname}">
 						<div id="Property">
 							<div style="font-weight: bolder;">${ranking.RTname}</div>
 							<div>${ranking.RTintroduce}</div>

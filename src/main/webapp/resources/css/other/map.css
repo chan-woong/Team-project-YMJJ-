@@ -1,56 +1,73 @@
 @CHARSET "UTF-8";
 
-*{
-margin: 0px auto;
-padding: 0px auto;
-box-sizing: border-box;
-font-size: 17px;
+* {
+	margin: 0px auto;
+	padding: 0px auto;
+	box-sizing: border-box;
+	font-size: 17px;
 }
-#M_menuF{
-border: 3px black solid;
-position: absolute;
-left: 960px;
-top: 530px;
-transform: translateX(-50%) translateY(-50%);
-width: 1536px;
-height: 750px;
+
+#main_title {
+	width: 1920px;
+	height: 80px;
+	text-align: center;
+	margin-top: 20px;
+	font-size: 50px;
+	font-weight: bolder;
 }
-#M_content{
-width: 1456px;
-height: 710px;
-float: left;
-margin: 20px 40px 20px 40px;
+
+#M_menuF {
+	border: 3px black solid;
+	position: absolute;
+	left: 960px;
+	top: 550px;
+	transform: translateX(-50%) translateY(-50%);
+	width: 1536px;
+	height: 750px;
 }
-#map{
-border: 1px black solid;
-width: 1456px;
-height: 600px;
+
+#M_content {
+	width: 1456px;
+	height: 710px;
+	float: left;
+	margin: 20px 40px 20px 40px;
 }
-#check{
-width: 1456px;
-height: 90px;
-overflow: hidden;
-margin-top: 20px;
+
+#map {
+	border: 1px black solid;
+	width: 1456px;
+	height: 600px;
 }
-#checkBox{
-overflow: hidden;
-float: left;
+
+#check {
+	width: 1456px;
+	height: 90px;
+	overflow: hidden;
+	margin-top: 20px;
 }
-#checkBox > div > input{
-margin-left: 10px;
+
+#checkBox {
+	overflow: hidden;
+	float: left;
 }
-#select > input{
-width: 700px;
-float: right; 
-margin-right: 50px; 
-border-radius : 10px
+
+#checkBox>div>input {
+	margin-left: 10px;
 }
-#subtitle{
-position: relative;
-background-color: white;
-font-size: 17px;
-display:inline-block;
-height: 25px;
-top: -12.5px;
-margin-left: 10px;
+
+#select>input {
+	width: 700px;
+	float: right;
+	margin-right: 50px;
+	border-radius: 10px
+}
+
+#subtitle {
+	position: relative;
+	background-color: white;
+	font-size: 17px;
+	display: inline-block;
+	height: 25px;
+	top: -12.5px;
+	margin-left: 10px;
 }
