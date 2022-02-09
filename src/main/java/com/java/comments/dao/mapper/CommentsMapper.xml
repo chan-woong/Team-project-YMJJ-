@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+  <mapper namespace="com.java.comments.dao.mapper.CommentsMapper">
+  
+  	<insert id="commentsInsert" parameterType="com.java.comments.dto.CommentsDto">
+	  	INSERT INTO Comments VALUES(Comments_CMnumber_seq.nextval, #{Mid}, #{RTnumber}, #{CMliked}, #{CMcontent})
+  	</insert>
+  	
+  	<select id="commentsCount" resultType="int">
+		SELECT COUNT(CMnumber) FROM Comments
+	</select>
+  
+	<select id="commentsList" parameterType="java.util.HashMap" resultType="com.java.comments.dto.CommentsDto">
+		<![CDATA[
+			SELECT * FROM 
+				(SELECT ROWNUM AS rnum, a.* FROM 
+							(SELECT  * FROM Comments ORDER BY CMnumber ASC) a) b 
+			WHERE b.rnum >=#{startRow} AND b.rnum <=#{endRow} AND RTnumber=#{RTnumber}
+		 ]]>
+	</select>
+ 
+  </mapper>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  

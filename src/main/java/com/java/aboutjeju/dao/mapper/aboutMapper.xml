@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	<mapper namespace="com.java.aboutjeju.dao.mapper.AboutMapper">
+
+	<insert id="Linsert" parameterType="com.java.aboutjeju.dto.AboutjejuDto">
+		INSERT INTO Landmark VALUES(Landmark_LMnumber_seq.nextval,#{LMcategory},#{LMtitle},#{LMcontent},#{LMaddress},#{LMpostalcode},#{LMlatitude},#{LMlongitude},#{Iname},#{Isize},#{Ipath})
+	</insert>
+	 
+	<select id="IRead" parameterType="String" resultType="com.java.aboutjeju.dto.AboutjejuDto">
+		SELECT * from landmark where LMcategory =  #{introduction}
+	</select>
+	
+	<select id="LRead" parameterType="String" resultType="com.java.aboutjeju.dto.AboutjejuDto">
+		SELECT * from landmark where LMcategory = #{location}
+	</select>
+	
+	<select id="SRead" parameterType="String" resultType="com.java.aboutjeju.dto.AboutjejuDto">
+		SELECT * from landmark where LMcategory = #{speciality}
+	</select>
+	
+	<select id="ARead" parameterType="String" resultType="com.java.aboutjeju.dto.AboutjejuDto">
+		SELECT * from landmark where LMcategory = #{activites}
+	</select> 
+	
+</mapper>

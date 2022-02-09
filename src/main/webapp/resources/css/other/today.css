@@ -1,0 +1,107 @@
+@charset "UTF-8";
+
+*{
+margin: 0px auto;
+padding: 0px auto;
+box-sizing: border-box;
+}
+#main_title{
+width: 1920px;
+height: 80px;
+text-align: center;
+margin-top: 20px;
+font-size: 50px;
+font-weight: bolder;
+}
+.today_box{
+border: black 1px solid;
+border-radius: 20px;
+width: 1870px;
+height: 740px;
+margin: 20xp;
+}
+.weather_box{
+width: 400px;
+height: 492px;
+float: left;
+margin-left: 35px;
+margin-top: 120px;
+}
+.covid_box{
+width: 400px;
+height: 492px;
+float: left;
+margin-left: 60px;
+margin-top: 120px;
+}
+.ranking_box{
+border: black 1px solid;
+border-radius: 25px;
+width: 840px;
+height: 492px;
+float: left;
+margin-left: 60px;
+margin-top: 120px;
+}
+.box_title{
+border: black 0px solid;
+width: 1760px;
+height: 120px;
+float: left;
+margin-left: 35px;
+}
+.t_weather{
+border: blue 0px solid;
+width: 400px;
+height: 120px;
+float: left;
+font-size: 17px;
+text-align: center;
+padding-top: 30px;
+}
+.t_covid{
+border: blue 0px solid;
+width: 400px;
+height: 120px;
+float: left;
+margin-left: 60px;
+font-size: 17px;
+text-align: center;
+padding-top: 30px;
+}
+.t_ranking{
+border: blue 0px solid;
+width: 840px;
+height: 120px;
+float: left;
+margin-left: 60px;
+font-size: 17px;
+text-align: center;
+padding-top: 30px;
+}
+#rankingView{
+width: 375px;
+height: 205px;
+margin: 20px;
+float: left;
+padding-left: 30px;
+}
+#Rimg{
+border: black 1px solid;
+width: 170px;
+height: 195px;
+margin: 5px;
+float: left;
+}
+#Property{
+width: 150px;
+height: 195px;
+margin: 5px;
+float: left;
+}
+#Property > div{
+width: 150px;
+height: 55px;
+margin-bottom: 15px;
+font-size: 20px;
+}

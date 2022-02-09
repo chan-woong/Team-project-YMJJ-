@@ -1,8 +1,0 @@
-{"member":
-	[
-		{"strNumber":1,"stdName":"KIM","score":77},
-		{"strNumber":2,"stdName":"PARK","score":90},
-		{"strNumber":3,"stdName":"LEE","score":80}
-		
-	]
-}

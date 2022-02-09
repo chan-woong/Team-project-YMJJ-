@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+  <mapper namespace="com.java.member.dao.mapper.MemberMapper">
+  
+  	<insert id="memberInsert" parameterType="com.java.member.dto.MemberDto" >
+  		INSERT INTO Member VALUES(#{Mid},#{Mpassword},#{Mname},#{Mpostalcode},#{Maddress},#{Mresidentnumber1},#{Mresidentnumber2},#{Mcallnumber1},#{Mcallnumber2},#{Mcallnumber3},#{Memail})
+  	</insert>
+  	
+  	<select id="idcheck" parameterType="String" resultType="int">
+  	SELECT COUNT(Mid) FROM Member WHERE Mid = #{Mid}
+  	</select>
+  	
+  	<select id="loginOk" parameterType="java.util.HashMap" resultType="com.java.member.dto.MemberDto">
+  	SELECT * FROM Member WHERE Mid = #{Mid} AND Mpassword = #{Mpassword}
+  	</select>
+  	
+  	<select id="memberSelect" parameterType="String" resultType="com.java.member.dto.MemberDto">
+  	SELECT * FROM Member WHERE Mid = #{Mid}
+  	</select>
+  	
+  	<select id="MembergetCount" resultType="int">
+  	SELECT COUNT(*) FROM Member
+  	</select>
+  	
+  	<select id="memberList" resultType="com.java.member.dto.MemberDto">
+  	SELECT * FROM Member
+  	</select>
+  	
+  	<update id="Memberupdata" parameterType="com.java.member.dto.MemberDto">
+  	UPDATE member SET Mpassword=#{Mpassword}, Mpostalcode=#{Mpostalcode}, Maddress=#{Maddress}, Memail=#{Memail}, Mcallnumber1=#{Mcallnumber1}, Mcallnumber2=#{Mcallnumber2}, Mcallnumber3=#{Mcallnumber3} 
+		WHERE Mid=#{Mid}
+  	</update>
+  	<delete id="Bookdelete" parameterType="String">
+  	DELETE FROM BOOKMARK WHERE Mid = #{Mid}
+  	</delete>
+  	<delete id="ReViewdelete" parameterType="String">
+  	DELETE FROM REVIEW WHERE Writer = #{Mid}
+  	</delete>
+  	<delete id="Commentdelete" parameterType="String">
+  	DELETE FROM COMMENTS WHERE Mid = #{Mid}
+  	</delete>
+  	<delete id="Memberdelete" parameterType="String">
+  	DELETE FROM Member WHERE Mid = #{Mid}
+  	</delete>
+  	<select id="getReview" parameterType="String" resultType="com.java.member.dto.SimpleReviewDto">
+  	SELECT r.RVnumber,r.Writer,rt.RTnumber,r.RVtitle,r.RVcontent,r.RVcount,r.RVdate,r.RTname FROM review r, Restaurant rt WHERE Writer = #{Mid} AND r.RTnumber = rt.RTnumber
+  	</select>
+  	<select id="getRestaurnatList" parameterType="String" resultType="com.java.restaurant.dto.RestaurnatDto">
+  	SELECT * FROM Restaurant WHERE RTtype = #{RTtype}
+  	</select>
+  	<select id="selectRestaurnatList" parameterType="String" resultType="com.java.restaurant.dto.RestaurnatDto">
+  	SELECT * FROM Restaurant WHERE RTname = #{RTname}
+  	</select>
+  	<insert id="markinsert" parameterType="java.util.HashMap">
+  	INSERT INTO BOOKMARK VALUES(BOOKMARK_Bnumber_seq.nextval,#{Mid},#{RTnumber})
+  	</insert>
+  	<delete id="markdelete" parameterType="java.util.HashMap">
+  	DELETE FROM BOOKMARK WHERE Mid = #{Mid} AND RTnumber = #{RTnumber}
+  	</delete>
+  	<select id="getBook" parameterType="String" resultType="com.java.member.dto.BookmarkDto">
+  	SELECT b.Bnumber, b.Mid, r.RTnumber FROM BOOKMARK b, Restaurant r WHERE Mid = #{Mid} AND b.RTnumber = r.RTnumber
+  	</select>
+  	<select id="getRanking" resultType="com.java.member.dto.RankingDto">
+  	SELECT a.*, r.RTname, r.RTintroduce, r.RTIname FROM (SELECT RTnumber, ROUND( AVG(CMliked),1 )  AS Avg FROM Comments GROUP BY RTnumber ORDER BY AVG(CMliked) DESC) a, restaurant r WHERE a.RTnumber = r.RTnumber
+  	</select>
+  </mapper>   		
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  

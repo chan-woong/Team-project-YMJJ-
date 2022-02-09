@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+  <mapper namespace="com.java.review.dao.mapper.ReviewMapper">
+  
+  <resultMap type="com.java.review.dto.ReviewDto"  id="reviewDto">
+  		<result column="RVnumber"  property="RVnumber"/>
+  		<result column="Mid"  property="Mid"/>
+  		<result column="RTnumber"  property="RTnumber"/>
+  		<result column="RTname"  property="RTname"/>
+  		<result column="RVtitle"  property="RVtitle"/>
+  		<result column="RVcontent"  property="RVcontent"/>
+  		<result column="RVcount"  property="RVcount"/>
+  		<result column="RVdate"  property="RVdate"/>
+  		<result column="RVimgname"  property="RVimgname"/>
+  		<result column="RVimgsize"  property="RVimgsize"/>
+  		<result column="RVimgpath"  property="RVimgpath"/>
+  </resultMap>
+  	
+  <resultMap type="com.java.restaurant.dto.RestaurnatDto"  id="restaurnatDto">
+  		<result column="RTnumber"  property="RTnumber"/>
+  		<result column="RTname"  property="RTname"/>
+  		<result column="RTtype"  property="RTtype"/>
+  		<result column="RTaddress"  property="RTaddress"/>
+  		
+  		<result column="RTpostalcode"  property="RTpostalcode"/>
+  		<result column="RTcallnumber1"  property="RTcallnumber1"/>
+  		<result column="RTcallnumber2"  property="RTcallnumber2"/>
+  		<result column="RTcallnumber3"  property="RTcallnumber3"/>
+  		<result column="RTlatitude"  property="RTlatitude"/>
+  		<result column="RTlongitude"  property="RTlongitude"/>
+  		
+  		<result column="RTintroduce"  property="RTintroduce"/>
+  		<result column="RTcount"  property="RTcount"/>
+  		
+  		<result column="group_number"  property="group_Number"/>
+  		<result column="sequence_number"  property="sequence_Number"/>
+  		<result column="sequence_level"  property="sequence_Level"/>
+  	</resultMap>	
+  
+  <select id="reviewCount" resultType="int">
+  		SELECT COUNT(*) FROM Review
+  </select>
+  
+  <select id="getRTname" resultType="String">
+  		SELECT RTname FROM Restaurant WHERE RTnumber = #{RTnumber};
+  </select>
+  
+  <insert id="reviewInsert" parameterType="com.java.review.dto.ReviewDto">
+  	INSERT INTO review(RVnumber, Writer, RTnumber, RTname, RVtitle, RVcontent, RVcount, RVdate, RVimgname, RVimgpath, RVimgsize)
+  	VALUES('RV0'||Review_RVnumber_seq.nextval, #{Writer}, #{RTnumber}, #{RTname}, #{RVtitle}, #{RVcontent}, #{RVcount}, SYSDATE, #{RVimgname}, #{RVimgpath}, #{RVimgsize})
+  </insert>
+  
+  <select id="reviewList" parameterType="java.util.HashMap" resultMap="reviewDto">
+  	<![CDATA[
+	  		SELECT * FROM
+						(SELECT ROWNUM rnum, a.* FROM 
+								(SELECT * FROM review ORDER BY RVdate DESC) a) b 
+			WHERE b.rnum >=#{startRow} AND b.rnum <=#{endRow}
+		]]>
+  </select>
+  
+  <update id="reviewReadCount" parameterType="String">
+  		UPDATE review SET RVcount=RVcount+1 WHERE RVnumber=#{RVnumber}
+  </update>
+  
+  <select id="reviewRead" parameterType="String" resultMap="reviewDto">
+  	SELECT * FROM review WHERE RVnumber=#{RVnumber}
+  </select>
+  
+  <select id="passCheck" parameterType="java.util.HashMap" resultType="int">
+  	SELECT COUNT(*) FROM member WHERE Mpassword=#{password} AND Mid=#{Mid}
+  </select>
+  
+  <delete id="reviewDelete" parameterType="String">
+  	DELETE FROM review WHERE RVnumber=#{RVnumber}
+  </delete>
+  
+  <update id="reviewUpdate" parameterType="com.java.review.dto.ReviewDto">
+  	UPDATE review SET RVtitle=#{RVtitle}, RVcontent=#{RVcontent}
+  	WHERE RVnumber=#{RVnumber}
+  </update>
+  
+  <select id="RTsearch" parameterType="String" resultType="com.java.restaurant.dto.RestaurnatDto">
+		SELECT * FROM restaurant WHERE RTname LIKE #{RTname}
+  </select>
+  
+  </mapper>
