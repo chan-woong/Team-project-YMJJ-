@@ -18,7 +18,7 @@
 		<div id="menuF">
 			<div id="category">
 				<div id="detail" style="border-left: 0px;"></div>
-				<div id="detail" style="border-right: 0px;"
+				<div id="detail"
 					onclick="location.href='${root}/community/ReviewList.do';">
 					<a>Review</a>
 				</div>
@@ -26,7 +26,7 @@
 					onclick="location.href='${root}/community/EventList.do';">
 					<a>Event</a>
 				</div>
-				<div id="detail"
+				<div id="detail" style="border-right: 0px;"
 					onclick="location.href='${root}/community/Notice3.do';">
 					<a>Notice</a>
 				</div>
@@ -53,7 +53,7 @@
 							
 							<!-- 제목 입력(title) -->
 							<input
-							type="text" value="제목을 입력하세요." name="ctitle"
+							type="text" placeholder="제목을 입력하세요." name="ctitle"
 							style="width: 500px; height: 35px; font-size: 17px;" /></span>
 						<div
 							style="border-left: 1px black solid; height: 59px; float: left; margin-left: 87px; margin-top: 0px;"></div>

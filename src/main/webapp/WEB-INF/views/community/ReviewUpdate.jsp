@@ -81,7 +81,21 @@ function RTsearch(root){
 	//alert(url);
 	
 	window.open(url, "", "width=500, height=500");
+	
 }
+	function reviewUpdateCheck(obj) {
+		if (obj.RVtitle.value == "") {
+			alert("제목을 입력해주세요.");
+			obj.RVtitle.focus();
+			return false;
+		}
+
+		if (obj.RVcontent.value == "") {
+			alert("본문을 입력해주세요.");
+			obj.RVcontent.focus();
+			return false;
+		}
+	}
 </script>
 </head>
 <body>
@@ -101,7 +115,7 @@ function RTsearch(root){
 					<a>Event</a>
 				</div>
 				<div id="detail" style="cursor: pointer;"
-					onclick="location.href='${root}/community/Notice.do';">
+					onclick="location.href='${root}/community/Notice3.do';">
 					<a>Notice</a>
 				</div>
 				<div id="detail"
@@ -111,7 +125,8 @@ function RTsearch(root){
 				<form name="reviewForm"
 						action="${root}/community/ReviewUpdateOk.do?root=${root}"
 						method="post"
-						enctype="multipart/form-data">
+						enctype="multipart/form-data"
+						onsubmit="return reviewUpdateCheck(this)">
 						
 						<input type="hidden" name="Writer" value="${Mid}"/>
 						<input type="hidden" name="RVnumber" value="${reviewDto.RVnumber}"/>

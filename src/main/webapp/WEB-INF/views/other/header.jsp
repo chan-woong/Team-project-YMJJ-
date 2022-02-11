@@ -69,7 +69,7 @@
         </div>
         <div id="menuBar">
             <div id="menu" onclick="location.href='${root}/aboutjeju/introduction.do'">About JEJU</div>
-            <div id="menu" onclick="location.href='${root}/restaurant/main.do'">Restaurant</div>
+            <div id="menu" onclick="location.href='${root}/restaurant/main.do?RTtype=all'">Restaurant</div>
                         <div id="menu" onclick="location.href='${root}/community/ReviewList.do'">Community</div>
             <div id="menu" onclick="location.href='${root}/other/map.do'">Map</div>
             <div id="menu" onclick="location.href='${root}/other/today.do'">Today</div>

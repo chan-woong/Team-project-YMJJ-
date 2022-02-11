@@ -102,7 +102,7 @@
 
 	<select id="RTsearch" parameterType="String"
 		resultType="com.java.restaurant.dto.RestaurnatDto">
-		SELECT * FROM restaurant WHERE RTname LIKE #{RTname}
+		SELECT * FROM restaurant WHERE RTname LIKE '%'||#{RTname}||'%'
 	</select>
 
 </mapper>

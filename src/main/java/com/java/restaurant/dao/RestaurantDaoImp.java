@@ -41,11 +41,15 @@ public class RestaurantDaoImp implements RestaurantDao {
 	}
 
 	@Override
-	public List<RestaurnatDto> restaurantList(int startRow, int endRow, String rTtype) {
+	public List<RestaurnatDto> restaurantLists(int startRow, int endRow, String rTtype) {
 		HashMap<String, Object> hMap = new HashMap<String, Object>();
 		hMap.put("startRow", startRow);
 		hMap.put("endRow", endRow);
 		hMap.put("rTtype", rTtype);
+
+		System.out.println(startRow);
+		System.out.println(endRow);
+		System.out.println(rTtype);
 		return sqlSessionTemplate.selectList("boardListtype", hMap);
 	}
 
@@ -136,5 +140,4 @@ public class RestaurantDaoImp implements RestaurantDao {
 		LogAspect.logger.info(LogAspect.LogMsg + check);
 		return check;
 	}
-
 }

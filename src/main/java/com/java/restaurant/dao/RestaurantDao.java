@@ -15,7 +15,7 @@ public interface RestaurantDao {
 
 	public List<RestaurnatDto> restaurantList(int startRow, int endRow);
 
-	public List<RestaurnatDto> restaurantList(int startRow, int endRow, String rTtype);
+	public List<RestaurnatDto> restaurantLists(int startRow, int endRow, String rTtype);
 
 	public RestaurnatDto restaurantRead(String RTnumber);
 

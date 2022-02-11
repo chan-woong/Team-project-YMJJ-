@@ -19,7 +19,7 @@
 
 	<div style="font-size: 17px;"id="tag">
 	
-		<div style="border: 0px solid blue; float: left;" onclick="location.href='${root}/restaurant/main.do?RTtype=회집'">회집</div>
+		<div style="border: 0px solid blue; float: left;" onclick="location.href='${root}/restaurant/main.do?RTtype=횟집'">횟집</div>
 				
 		<div style="border: 0px solid blue; float: left;" onclick="location.href='${root}/restaurant/main.do?RTtype=한식'">한식</div>
 				
@@ -40,8 +40,6 @@
 		<input type="button" onclick="location.href='${root}/restaurant/write.do'" value="추가"/>
 	</div>
 	</c:if>
-	
-
 	<div style="font-size: 17px;" id="list">
 		<c:forEach var="restaurantDto" items="${restaurantList}">
 	         <li style="width: 340px; height: 200px; margin-left: 40px; ">
@@ -69,15 +67,15 @@
 		</c:if>
 		
 		<c:if test="${startPage > pageBlock }">
-			<a href="${root}/restaurant/main.do?pageNumber=${startPage-pageBlock}">[이전]</a>
+			<a href="${root}/restaurant/main.do?pageNumber=${startPage-pageBlock}&RTtype=${RTtype}">[이전]</a>
 		</c:if>
 		
 		<c:forEach var="i"  begin="${startPage}" end="${endPage}">
-			<a href="${root}/restaurant/main.do?pageNumber=${i}">[${i}]</a>
+			<a href="${root}/restaurant/main.do?pageNumber=${i}&RTtype=${RTtype}">[${i}]</a>
 		</c:forEach>
 		
 		<c:if test="${endPage < pageCount }">
-			<a href="${root}/restaurant/main.do?pageNumber=${startPage+pageBlock}">[다음]</a>
+			<a href="${root}/restaurant/main.do?pageNumber=${startPage+pageBlock}&RTtype=${RTtype}">[다음]</a>
 		</c:if>
 			
 		<br/>

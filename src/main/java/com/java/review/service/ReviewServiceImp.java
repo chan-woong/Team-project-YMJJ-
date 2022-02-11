@@ -62,10 +62,12 @@ public class ReviewServiceImp implements ReviewService {
 		ReviewDto reviewDto = (ReviewDto) map.get("reviewDto");
 		MultipartHttpServletRequest request = (MultipartHttpServletRequest) map.get("request");
 		MultipartFile upFile = request.getFile("file");
+		System.out.println(reviewDto.toString());
+		
 		if (upFile.getSize() != 0) {
 			String fileName = Long.toString(System.currentTimeMillis()) + "_" + upFile.getOriginalFilename();
 			long fileSize = upFile.getSize();
-			File path = new File("C:\\Users\\cksdn\\OneDrive\\바탕 화면\\Git\\pro\\src\\main\\webapp\\resources\\img");
+			File path = new File("C:\\Users\\User\\Desktop\\git\\pro\\src\\main\\webapp\\resources\\img");
 			path.mkdir();
 			if (path.exists() && path.isDirectory()) {
 				File file = new File(path, fileName);
@@ -141,7 +143,7 @@ public class ReviewServiceImp implements ReviewService {
 		if (upFile.getSize() != 0) {
 			String fileName = Long.toString(System.currentTimeMillis()) + "_" + upFile.getOriginalFilename();
 			long fileSize = upFile.getSize();
-			File path = new File("C:\\Users\\cksdn\\OneDrive\\바탕 화면\\Git\\pro\\src\\main\\webapp\\resources\\img");
+			File path = new File("C:\\Users\\User\\Desktop\\git\\pro\\src\\main\\webapp\\resources\\img");
 			path.mkdir();
 			if (path.exists() && path.isDirectory()) {
 				File file = new File(path, fileName);

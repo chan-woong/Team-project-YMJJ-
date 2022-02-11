@@ -4,8 +4,8 @@ let today = new Date();
 let year = today.getFullYear(); // 년도
 let month = today.getMonth() + 1;  // 월
 let date = today.getDate();  // 날짜
-if(month <= 10) month = '0'+month;
-if(date <= 10) date = '0'+date;
+if(month < 10) month = '0'+month;
+if(date < 10) date = '0'+date;
 let day = year + month + date;
 function toServer() {
 	var url = 'http://openapi.data.go.kr/openapi/service/rest/Covid19/getCovid19SidoInfStateJson'; /*URL*/

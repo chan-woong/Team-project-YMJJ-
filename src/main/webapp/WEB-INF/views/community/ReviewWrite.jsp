@@ -77,10 +77,42 @@ document.addEventListener('DOMContentLoaded', function(){
 });
 
 	function RTsearch(root){
-		var url=root+"/community/RestaurantSearch.do?RTname=0";
+		var url=root+"/community/RestaurantSearch.do?";
 		//alert(url);
 		
-			window.open(url, "", "width=500, height=500");
+			window.open(url, "식당검색", "width=500, height=500");
+	}
+	
+	
+	function reviewCheck(obj) {
+		if (obj.RTnumber.value == "") {
+			alert("식당검색으로 리뷰를 남길 식당을 선택해 주세요.");
+			obj.RVtitle.focus();
+			return false;
+		}
+		
+		if (obj.RTname.value == "") {
+			alert("식당검색으로 리뷰를 남길 식당을 선택해 주세요.");
+			obj.RVtitle.focus();
+			return false;
+		}
+		
+		if (obj.RVtitle.value == "") {
+			alert("제목을 입력해주세요.");
+			obj.RVtitle.focus();
+			return false;
+		}
+
+		if (obj.RVcontent.value == "") {
+			alert("본문을 입력해주세요.");
+			obj.RVcontent.focus();
+			return false;
+		}
+
+		if (!document.getElementById("imageSelector").value) {
+			alert("사진을 첨부해주세요.");
+			return false;
+		}
 	}
 </script>
 </head>
@@ -111,7 +143,8 @@ document.addEventListener('DOMContentLoaded', function(){
 				<form name="reviewForm"
 						action="${root}/community/ReviewWriteOk.do?root=${root}"
 						method="post"
-						enctype="multipart/form-data">
+						enctype="multipart/form-data"
+						onsubmit="return reviewCheck(this)">
 						
 						<input type="hidden" name="Writer" value="${Mid}"/>
 <%-- 						<input type="hidden" name="RTname" value="${RTname}"/> --%>
@@ -140,7 +173,7 @@ document.addEventListener('DOMContentLoaded', function(){
 					</div>
 					<div id="mid3">
 						<div>
-							작성자 <input type="text" value="${Mname}" disabled="disabled"
+							작성자 <input type="text" value="${Mid}" disabled="disabled"
 								style="width: 100px; text-align: center;" />
 						</div>
 					</div>

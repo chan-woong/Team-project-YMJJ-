@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function(){
 					<a>Event</a>
 				</div>
 				<div id="detail" style="cursor: pointer;"
-					onclick="location.href='${root}/board/Notice3.do'">
+					onclick="location.href='${root}/community/Notice3.do'">
 					<a>Notice</a>
 				</div>
 				<div id="detail"

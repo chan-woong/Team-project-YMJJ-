@@ -13,14 +13,14 @@
 	<c:if test="${check > 0 }">
 		<script type="text/javascript">
 			alert("댓글 작성 완료 되었습니다.");
-			location.href="${root}/restaurant/introduction.do?RTnumber=${restaurantDto.RTnumber}&pageNumber=${pageNumber}"
+			location.href="${root}/restaurant/introduction.do?RTnumber=${RTnumber}&pageNumber=${pageNumber}&Mid=${Mid}"
 		</script>
 	</c:if>
 	
 	<c:if test="${check == 0 }">
 		<script type="text/javascript">
 			alert("댓글 작성 되지 않았습니다.");
-			location.href="${root}/restaurant/introduction.do?RTnumber=${restaurantDto.RTnumber}&pageNumber=${pageNumber}"
+			location.href="${root}/restaurant/introduction.do?RTnumber=${RTnumber}&pageNumber=${pageNumber}"
 			
 		</script>
 	</c:if>

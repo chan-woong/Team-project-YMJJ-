@@ -68,12 +68,12 @@
                 			            '        </div>' + 
                 			            '        <div class="body">' + 
                 			            '            <div class="img">' +
-                			            '                <img src="${root}/resources/img/고양이.jfif" width="73" height="70">' +
+                			            '                <img src="${root}/resources/img/${restaurnat.RTIname}" width="73" height="70">' +
                 			            '           </div>' + 
                 			            '            <div class="desc">' + 
                 			            '                <div class="ellipsis">${restaurnat.RTintroduce}</div>' + 
-                			            '                <div class="jibun ellipsis">${restaurnat.RTaddress}</div>' + 
-                			            '                <div><a href="#" target="_blank" class="link">가게페이지</a></div>' + 
+                			            '                <div class="jibun ellipsis">${restaurnat.RTcallnumber1} - ${restaurnat.RTcallnumber2} - ${restaurnat.RTcallnumber3}</div>' + 
+                			            '                <div><a href="${root}/restaurant/introduction.do?RTnumber=${restaurnat.RTnumber}&pageNumber=1&Mid=${Mid}" target="_blank" class="link">가게페이지</a></div>' + 
                 			            '            </div>' + 
                 			            '        </div>' + 
                 			            '    </div>' +    
@@ -99,7 +99,7 @@
                 <div id="check">
                     <div id="checkBox">
                         <div>
-                            <input type="radio" value="회집" name="category"/><label>회집</label>
+                            <input type="radio" value="횟집" name="category"/><label>횟집</label>
                             <input type="radio" value="한식" name="category"/><label>한식</label>
                             <input type="radio" value="중국식" name="category"/><label>중국식</label>
                             <input type="radio" value="일식" name="category"/><label>일식</label>

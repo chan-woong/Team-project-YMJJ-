@@ -250,7 +250,10 @@ a {
 	border: 2px black solid;
 	height: 279px;
 	padding-top: 10px;
+	padding-bottom: 10px;
+    overflow: auto;
 	-ms-overflow-style: none;
+	
 }
 
 #commentView::-webkit-scrollbar {
